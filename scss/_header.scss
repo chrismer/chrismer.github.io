@@ -4,6 +4,7 @@
 
 .header {
     position: fixed;
+    height: 80px;
     top: 0;
     left: 0;
     width: 100%;
@@ -40,7 +41,9 @@
         // text-decoration: none;
         // color: $color-texto-link;
         & img {
-            width: 80px;
+            position: absolute;
+            top: 10px;
+            width: 120px;
             -webkit-transition: initial;
             -moz-transition: initial;
             transition: initial;
