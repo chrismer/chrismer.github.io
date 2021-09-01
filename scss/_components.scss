@@ -1,0 +1,58 @@
+$color-primario: #9903e3;
+$color-texto-link: #fff;
+$color-secundario: #272727;
+$color-gris: #666;
+$tablet: 992px;
+$phone:768px;
+$phone-xs: 550px;
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin transition-ease {
+    transition: all -5s ease-in-out;
+}
+
+// responsive 992px
+@mixin mobile {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+// responsive 768px
+@mixin phone {
+    @media (max-width: $phone) {
+        @content;
+    }
+}
+
+// responsive 550px
+@mixin phone-xs {
+    @media (max-width: $phone-xs) {
+        @content;
+    }
+}
+
+@mixin titulo {
+    font-size: 4rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+$colors: ( primario: #9903e3, secundario: #272727, gris: #666, texto-link: #fff);
+@each $color,
+$valor in $colors {
+    .#{$color} {
+        color: $valor;
+    }
+}

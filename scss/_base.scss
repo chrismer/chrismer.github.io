@@ -1,0 +1,174 @@
+@use 'components' as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Roboto, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.contenedor .about,
+.contenedor .cursos,
+.contenedor .galery {
+    grid-column: span 12;
+}
+
+.button {
+    font-size: 1em;
+    color: #fff;
+    background: $color-primario;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .5s;
+    &:hover {
+        letter-spacing: 5px;
+        transition: .5s;
+    }
+}
+
+hr {
+    margin: 20px 0 40px 43%;
+    border: 0;
+    width: 15%;
+    height: 2px;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#FFFFFF), to(#FFFFFF), color-stop(.5, #333));
+}
+
+.show {
+    opacity: 0;
+    transition: all .7s;
+    & .containerIcons__iconosData {
+        @include flex(column,
+        justify,
+        center);
+        & .imagen-icono svg {
+            fill: #3b2667;
+        }
+        & h2 {
+            font-size: 4rem;
+            font-weight: 300;
+        }
+        & p {
+            text-align: center;
+            font-size: 2rem;
+        }
+    }
+    &.showArriba {
+        animation: mostrarArriba 1s;
+        @keyframes mostrarArriba {
+            0% {
+                transform: translateX(60px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+.titulo {
+    font-size: 3rem;
+    text-align: center;
+    height: 550px;
+    color: $color-texto-link;
+    @include flex(row,
+    center,
+    center);
+    text-shadow: 1px 1px 2px#111;
+    background: #2cebc7;
+    background: -moz-linear-gradient(315deg, #2cebc7 0%, #8267d5 100%);
+    background: -webkit-linear-gradient(315deg, #2cebc7 0%, #8267d5 100%);
+    background: linear-gradient(315deg, #2cebc7 0%, #8267d5 100%);
+    transform: skewY(-4deg);
+    transform-origin: top left;
+    & h2 {
+        transform: skewY(4deg);
+    }
+}
+
+.titulo-en-expansion {
+    font-size: 3rem;
+    color: $color-secundario;
+    text-shadow: 2px 2px 2px $color-gris;
+    text-align: center;
+    -webkit-animation: texto-en-expansion 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: texto-en-expansion 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    @-webkit-keyframes texto-en-expansion {
+        0% {
+            letter-spacing: -0.5em;
+            -webkit-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+    @keyframes texto-en-expansion {
+        0% {
+            letter-spacing: -0.5em;
+            -webkit-transform: translateZ(-700px);
+            transform: translateZ(-700px);
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            opacity: 1;
+        }
+    }
+}
+
+.titulo__focus {
+    font-size: 4rem;
+    color: $color-texto-link;
+    padding: 25px;
+    -webkit-animation: text-focus 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    @-webkit-keyframes text-focus {
+        0% {
+            -webkit-filter: blur(12px);
+            filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes text-focus {
+        0% {
+            -webkit-filter: blur(12px);
+            filter: blur(12px);
+            opacity: 0;
+        }
+        100% {
+            -webkit-filter: blur(0px);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+}

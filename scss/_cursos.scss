@@ -1,0 +1,155 @@
+@use 'components' as *;
+.curso__detalles {
+    @include flex(row, space-between, align);
+    max-width: 1200px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    // width: 100%;
+    & .curso__adultos,
+    .curso__adol,
+    .curso__niños {
+        width: 350px;
+        & img {
+            width: 100%;
+        }
+        & h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+        & .accordion__contentBx--adul {
+            margin-top: 68px;
+        }
+        & .accordion__contentBx--niños {
+            margin-top: 30px;
+        }
+        & .curso__accordion {
+            width: 100%;
+            & .accordion__contentBx {
+                position: relative;
+                margin: 10px 0;
+                & .accordion__label {
+                    position: relative;
+                    padding: 10px;
+                    background: $color-primario;
+                    color: $color-texto-link;
+                    cursor: pointer;
+                    &::before {
+                        content: '+';
+                        position: absolute;
+                        top: 50%;
+                        right: 20px;
+                        transform: translateY(-50%);
+                        font-size: 1.5em;
+                    }
+                }
+                &.active .accordion__label::before {
+                    content: '-';
+                }
+                & .accordion__content {
+                    position: relative;
+                    background: $color-texto-link;
+                    height: 0;
+                    overflow: hidden;
+                    transition: .7s;
+                    overflow-y: auto;
+                }
+                &.active .accordion__content {
+                    height: 150px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
+
+.curso__inter {
+    @include flex(row, space-between, center);
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ed1e79;
+    background: -moz-linear-gradient(to bottom, #ed1e79 0%, #662d8c 100%);
+    background: -webkit-linear-gradient(to bottom, #ed1e79 0%, #662d8c 100%);
+    background: linear-gradient(to bottom, #ed1e79 0%, #662d8c 100%);
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    & h2 {
+        margin-left: 30px;
+        text-align: left;
+        font-size: 3rem;
+        color: $color-texto-link;
+        text-shadow: 1px 1px 2px#111;
+    }
+    & p {
+        font-size: 1.2rem;
+        text-align: center;
+        color: #fed6e3;
+        width: 80%;
+        padding-top: 20px;
+    }
+    & img {
+        width: 100%;
+    }
+}
+
+@include mobile {
+    .curso__detalles {
+        margin: 0 5px;
+        & .curso__adultos,
+        .curso__adol,
+        .curso__niños {
+            width: 300px;
+        }
+    }
+    .curso__inter {
+        margin: 10px 5px;
+    }
+}
+
+@include phone {
+    .curso__detalles {
+        & .curso__adultos,
+        .curso__adol,
+        .curso__niños {
+            margin: 10px 10px;
+        }
+    }
+    .curso__inter {
+        margin: 0 10px;
+        & h2 {
+            text-align: center;
+        }
+        & p {
+            width: 100%;
+            padding: 0 10px;
+        }
+    }
+}
+
+@include phone-xs {
+    .curso__detalles {
+        & .curso__adultos,
+        .curso__adol,
+        .curso__niños {
+            width: 100%;
+            margin: 10px 10px;
+        }
+    }
+    .curso__inter {
+        @include flex(column, justify, align);
+        margin: 0 10px;
+        & p {
+            width: 100%;
+            padding: 20px 5px;
+        }
+        & .inter__colum-2 {
+            @include flex(row, center, center);
+            & img {
+                width: 50%;
+                margin: 0 0 10px;
+            }
+        }
+    }
+}

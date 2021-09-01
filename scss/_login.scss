@@ -1,0 +1,84 @@
+@use 'components' as *;
+.main__login {
+    background: #bc78ec;
+    background: -moz-linear-gradient(to bottom, #bc78ec 0%, #3b2667 100%);
+    background: -webkit-linear-gradient(to bottom, #bc78ec 0%, #3b2667 100%);
+    background: linear-gradient(to bottom, #bc78ec 0%, #3b2667 100%);
+    height: 100vh;
+    & .login__container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background: #fff;
+        border-radius: 30px;
+        h2 {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 2rem;
+            font-weight: 300;
+            border-bottom: 1px solid silver;
+        }
+        & form {
+            padding: 20px 40px;
+            & .texto-campos {
+                position: relative;
+                border-bottom: 2px solid #adadad;
+                margin: 30px 0;
+                & input {
+                    width: 100%;
+                    padding: 0 5px;
+                    height: 40px;
+                    font-size: 16px;
+                    border: none;
+                    background: none;
+                    outline: none;
+                }
+                & label {
+                    position: absolute;
+                    top: 50%;
+                    left: 5px;
+                    color: $color-gris;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    pointer-events: none;
+                    transition: .5s;
+                }
+                & span::before {
+                    content: '';
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: $color-primario;
+                    transition: .5s;
+                }
+                & input:focus~label,
+                input:valid~label {
+                    top: -5px;
+                    color: $color-primario;
+                }
+                & input:focus~span::before,
+                input:valid~span::before {
+                    width: 100%;
+                }
+            }
+            & .olvidar {
+                cursor: pointer;
+                color: $color-gris;
+                transition: .6s;
+                &:hover {
+                    color: $color-secundario;
+                    transition: .6s;
+                    text-decoration: underline;
+                }
+            }
+            & .button {
+                margin-left: 50%;
+                transform: translate(-50%);
+            }
+        }
+    }
+}

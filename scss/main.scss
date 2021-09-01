@@ -1,0 +1,445 @@
+@forward 'header';
+@forward 'base';
+@forward 'about';
+@forward 'cursos';
+@forward 'galery';
+@forward 'login';
+@forward '404';
+@use 'components' as *;
+
+/* SECCION ABOUT */
+
+.about {
+    margin: 40px 0;
+    h2 {
+        @include titulo;
+    }
+    .about__container {
+        @include flex(row, space-around, center);
+        & .container__row1 {
+            padding: 20px;
+            width: 50%;
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+        & .container__row2 {
+            padding: 20px;
+            width: 50%;
+            & img {
+                width: 100%;
+            }
+        }
+    }
+    .about__containerIcons {
+        @include flex(row, space-around, center);
+        margin: 40px 0 0;
+    }
+    .count {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+    .count::after {
+        content: ' +';
+        font-size: 2rem;
+    }
+}
+
+@include phone {
+    // SECCION ABOUT
+    .about .about__container {
+        @include flex(column, center, center);
+        & .container__row1 {
+            width: 100%;
+            & .button {
+                margin-left: 50%;
+                transform: translate(-50%);
+            }
+        }
+        & .container__row2 {
+            width: 100%;
+        }
+    }
+}
+
+@include phone-xs {
+    .about {
+        & .about__containerIcons {
+            @include flex(column, center, center);
+            & .containerIcons__iconosData {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+
+/* SECCION CURSOS */
+
+.cursos {
+    margin: 40px 0;
+    & h2 {
+        @include titulo;
+        // margin-bottom: 30px; 
+    }
+    & .cursos__container {
+        @include flex(row, space-between, center);
+        margin-bottom: 40px;
+        & .container__articulo {
+            width: 100%;
+            height: 470px;
+            @include flex(column, justify, center);
+            margin: 20px 15px;
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.75);
+            & img {
+                width: 100%;
+            }
+            & h3 {
+                margin: 5px 0;
+                font-size: 1.5rem;
+                font-weight: 400;
+            }
+            & p {
+                padding: 10px;
+            }
+        }
+    }
+    & .cursos__boton {
+        @include flex(row, center, center)
+    }
+}
+
+@include phone {
+    .cursos__container {
+        width: 70%;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+}
+
+@include phone-xs {
+    .cursos__container {
+        width: 100%;
+    }
+}
+
+
+/* GALERIA */
+
+.galery {
+    background: #a8edea;
+    background: -moz-linear-gradient(to bottom, #a8edea 0%, #fed6e3 100%);
+    background: -webkit-linear-gradient(to bottom, #a8edea 0%, #fed6e3 100%);
+    background: linear-gradient(to bottom, #a8edea 0%, #fed6e3 100%);
+    border-radius: 50px;
+    margin: 20px 0;
+    padding-top: 40px;
+    & h2 {
+        @include titulo;
+        color: $color-texto-link;
+        text-shadow: 1px 1px 2px#111;
+        padding-bottom: 20px;
+    }
+    & .galery__container {
+        @include flex(row, center, align);
+        flex-wrap: wrap;
+        // margin-top: 40px;
+        & .container__box {
+            width: 340px;
+            margin: 0 20px 20px;
+            border: 15px solid #fff;
+            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.8);
+            & .box__imgBox {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                & img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                    transition: .7s;
+                    &:hover {
+                        transform: scale(1.4);
+                        transition: .7s;
+                    }
+                }
+            }
+            & .container__text {
+                padding: 15px 0 5px;
+                & h3 {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    & .galery__video {
+        @include flex(row, center, center);
+        & iframe {
+            border: 15px solid #fff;
+            box-shadow: 0 5px 35px rgb(0 0 0 / 80%);
+            transition: .7s;
+            &:hover {
+                transform: scale(1.2);
+                transition: .7s;
+            }
+        }
+    }
+    & .galery__boton {
+        @include flex(row, center, center);
+        margin: 20px 0 40px;
+    }
+}
+
+
+/* ----- SECCION TESTIMONIOS ----- */
+
+.testimonios {
+    background: url(../img/fonfo-test.jpg);
+    background-size: cover;
+    padding: 40px 0 0;
+    & h2 {
+        @include titulo;
+        color: $color-texto-link;
+        text-shadow: 2px 2px 2px#000;
+        padding-bottom: 20px;
+    }
+    & .testimonios__content {
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        & .content__box {
+            width: 340px;
+            margin: 0 20px 100px;
+            padding: 40px;
+            background: $color-texto-link;
+            @include flex(column, center, center);
+            border-radius: 30px;
+            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.8);
+            & .box__imgBox {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+                border-radius: 50%;
+                overflow: hidden;
+                & img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            & .box__parrafo {
+                text-align: center;
+                & p {
+                    color: $color-gris;
+                    font-style: italic;
+                }
+                & h3 {
+                    margin-top: 20px;
+                    font-size: 1.2em;
+                    // color: $color-primario;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+
+/* SECCION CONTACTO */
+
+.contact {
+    padding-top: 40px;
+    background: #380152;
+    background: -moz-linear-gradient(360deg, #380152 0%, #9903e3 100%);
+    background: -webkit-linear-gradient(360deg, #380152 0%, #9903e3 100%);
+    background: linear-gradient(360deg, #380152 0%, #9903e3 100%);
+    & h2 {
+        @include titulo;
+        color: $color-texto-link;
+        text-shadow: 1px 1px 1px#000;
+        margin-bottom: 40px;
+    }
+    & .contact__container {
+        @include flex(row, space-between, center);
+        padding-bottom: 25px;
+        flex-wrap: wrap;
+        margin: 0 40px;
+        & .container__datosGral {
+            & h3,
+            a {
+                color: $color-texto-link;
+                text-decoration: none;
+                padding: 10px;
+            }
+            & .datosGral__iconContact {
+                position: relative;
+                padding: 20px 0;
+                @include flex(row, justify, align);
+                & i {
+                    min-width: 60px;
+                    height: 60px;
+                    background: $color-texto-link;
+                    @include flex(row, center, center);
+                    border-radius: 50%;
+                }
+            }
+        }
+        & .contact__contactForm {
+            width: 40%;
+            padding: 40px;
+            background: $color-texto-link;
+            // max-width: 500px;
+            border-radius: 30px;
+            & h2 {
+                font-size: 3rem;
+                color: $color-primario;
+                text-shadow: initial;
+                margin-bottom: 20px;
+            }
+            & .contactForm__inputBox {
+                position: relative;
+                width: 100%;
+                margin-top: 10px;
+                & input,
+                textarea {
+                    width: 100%;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    margin: 10px 0;
+                    border: none;
+                    border-bottom: 2px solid #333;
+                    outline: none;
+                    resize: none;
+                }
+                & span {
+                    position: absolute;
+                    left: 0;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    margin: 10px 0;
+                    pointer-events: none;
+                    transition: .5s;
+                    color: $color-gris;
+                }
+                & input:focus~span,
+                input:valid~span,
+                textarea:focus~span,
+                textarea:valid~span {
+                    color: $color-primario;
+                    font-size: 12px;
+                    transform: translateY(-20px);
+                }
+            }
+            & .contact__boton {
+                @include flex(row, center, center);
+            }
+        }
+    }
+    & .datosGral__mapa {
+        padding-bottom: 20px;
+        margin: 0 15px;
+        & iframe {
+            border-radius: 10px;
+        }
+    }
+}
+
+@include phone {
+    .contact {
+        .contact__container {
+            @include flex(column, justify, align);
+            & .contact__contactForm {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@include phone-xs {
+    .contact {
+        .contact__container {
+            & .contact__contactForm {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+/* SECCION FOOTER */
+
+.footer {
+    background: $color-secundario;
+    padding: 40px 0;
+    & .footer__container {
+        @include flex(row, space-between, center);
+        & .container__logo a {
+            // text-decoration: none;
+            // color: $color-texto-link;
+            // font-size: 2rem;
+            // margin-left: 10px;
+            & img {
+                width: 80px;
+            }
+        }
+        & .footer__navegacion {
+            @include flex(row, justify, align);
+            & li {
+                list-style: none;
+                & a {
+                    text-decoration: none;
+                    color: $color-texto-link;
+                    font-size: 1.1rem;
+                    margin-right: 15px;
+                    &:hover {
+                        background: $color-primario;
+                    }
+                }
+            }
+        }
+        & .container__socialRed {
+            @include flex(row, justify, align);
+            & .fa {
+                color: $color-texto-link;
+                margin-right: 15px;
+                &:hover {
+                    background: $color-primario
+                }
+            }
+        }
+    }
+    & p {
+        @include flex(row, center, center);
+        color: $color-texto-link;
+        margin-top: 20px;
+    }
+}
+
+@include phone {
+    .footer {
+        & .footer__container {
+            @include flex(column, center, center);
+            & .footer__navegacion {
+                @include flex(column, center, center);
+                margin: 30px 0;
+                & li {
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}
