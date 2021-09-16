@@ -5,6 +5,7 @@
 @forward 'galery';
 @forward 'login';
 @forward '404';
+@forward 'aula';
 @use 'components' as *;
 
 /* SECCION ABOUT */
@@ -19,7 +20,10 @@
         & .container__row1 {
             padding: 20px;
             width: 50%;
-            a {
+            & p {
+                margin-bottom: 10px;
+            }
+            & a {
                 text-decoration: none;
                 color: #fff;
             }
@@ -383,7 +387,10 @@
 /* SECCION FOOTER */
 
 .footer {
-    background: $color-secundario;
+    background: #222225;
+    background: -moz-linear-gradient(59deg, #222225 0%, #47474c 100%, #6e7ff3 100%);
+    background: -webkit-linear-gradient(59deg, #222225 0%, #47474c 100%, #6e7ff3 100%);
+    background: linear-gradient(59deg, #222225 0%, #47474c 100%, #6e7ff3 100%);
     padding: 40px 0;
     & .footer__container {
         @include flex(row, space-between, center);
@@ -393,7 +400,7 @@
             // font-size: 2rem;
             // margin-left: 10px;
             & img {
-                width: 80px;
+                width: 120px;
             }
         }
         & .footer__navegacion {
@@ -441,5 +448,32 @@
                 }
             }
         }
+    }
+}
+
+.volver {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-wsp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background: $color-primario;
+    color: $color-texto-link;
+    font-size: 2.5rem;
+    text-align: center;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    transition: all .3s;
+    &:hover {
+        color: #0df053;
+        background: $color-texto-link;
+        transition: all .3s;
     }
 }

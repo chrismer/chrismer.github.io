@@ -26,12 +26,20 @@
                 }
             }
             & .about__datos-historia {
-                margin: 0 80px;
                 & h2 {
-                    text-align: center;
-                    font-size: 2.2rem;
+                    font-size: 2rem;
                     font-weight: 400;
-                    margin: 20px 0;
+                    color: $color-primario;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                & .cambridge {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    & img {
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -72,6 +80,15 @@
                 }
                 & .about__datos-historia {
                     margin: 0;
+                    & .cambridge {
+                        flex-direction: column;
+                        & p {
+                            padding: 10px 0;
+                        }
+                        & img {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
