@@ -1605,7 +1605,7 @@ input {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 100%;
 }
 #central .carreras .container .card {
   background: rgba(255, 255, 255, 0.25);
@@ -1659,6 +1659,7 @@ input {
   color: #fff;
   text-shadow: 2px 2px 2px #1c1c1c;
   text-align: center;
+  margin-bottom: 20px;
 }
 #central .material .container {
   background-repeat: no-repeat;
@@ -1851,11 +1852,24 @@ input {
   #menu-toggle:checked ~ .close-mobile-menu {
     right: 0;
   }
+
+  #central .carreras .container {
+    height: 100%;
+    flex-wrap: wrap;
+  }
 }
 @media only screen and (max-width: 950px) {
   .main-content main .cards {
     display: flex;
     flex-direction: column;
+  }
+
+  #central .carreras .container .card {
+    width: 100%;
+  }
+  #central .news .latest-news .container .news-active {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -1869,10 +1883,28 @@ input {
   .program .programa .profe .content__box {
     width: 100%;
   }
+
+  #central .carreras .container .card {
+    width: 100%;
+  }
+  #central .news .latest-news .container .news-active {
+    grid-template-columns: 1fr;
+  }
 }
 @media only screen and (max-width: 630px) {
   .main-content header .search {
     display: none;
+  }
+
+  #central .material .container .jumbo {
+    flex-direction: column;
+    height: 100%;
+  }
+  #central .material .container .resources .recursos {
+    flex-direction: column;
+  }
+  #central .material .container .resources .recursos .pdf {
+    margin-bottom: 20px;
   }
 }
 /* SECCION ABOUT */

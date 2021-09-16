@@ -438,7 +438,7 @@ input {
         }
         & .container {
             @include flex(row, center, center);
-            height: 70vh;
+            height: 100%;
             & .card {
                 background: rgba( 255, 255, 255, 0.25);
                 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
@@ -495,6 +495,7 @@ input {
             color: $color-texto-link;
             text-shadow: 2px 2px 2px #1c1c1c;
             text-align: center;
+            margin-bottom: 20px;
         }
         & .container {
             background-repeat: no-repeat;
@@ -694,12 +695,39 @@ input {
             right: 0;
         }
     }
+    #central {
+        & .carreras {
+            & .container {
+                height: 100%;
+                flex-wrap: wrap;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 950px) {
     .main-content main .cards {
         display: flex;
         flex-direction: column;
+    }
+    #central {
+        & .carreras {
+            & .container {
+                & .card {
+                    width: 100%;
+                }
+            }
+        }
+        & .news {
+            & .latest-news {
+                & .container {
+                    & .news-active {
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: auto;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -717,12 +745,48 @@ input {
             }
         }
     }
+    #central {
+        & .carreras {
+            & .container {
+                & .card {
+                    width: 100%;
+                }
+            }
+        }
+        & .news {
+            & .latest-news {
+                & .container {
+                    & .news-active {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 630px) {
     .main-content header {
         & .search {
             display: none;
+        }
+    }
+    #central {
+        & .material {
+            & .container {
+                & .jumbo {
+                    flex-direction: column;
+                    height: 100%;
+                }
+                & .resources {
+                    & .recursos {
+                        flex-direction: column;
+                        & .pdf {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
