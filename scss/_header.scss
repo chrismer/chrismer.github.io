@@ -14,7 +14,7 @@
     transition: 0.5s;
     &.sticky {
         background: $color-texto-link;
-        padding: 10px 40px;
+        padding: 10px 20px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         & .header__logo {
             color: $color-secundario;
@@ -36,10 +36,6 @@
         }
     }
     &__logo {
-        // font-weight: 700;
-        // font-size: 2em;
-        // text-decoration: none;
-        // color: $color-texto-link;
         & img {
             position: absolute;
             top: 10px;
@@ -86,7 +82,7 @@
         transition: .5s;
         border: 2px solid #fff;
         &:hover {
-            letter-spacing: 2px;
+            transform: scale(1.05);
             transition: .5s;
             background: $color-primario;
             color: $color-texto-link;
@@ -215,6 +211,24 @@
     }
 }
 
+@include phone-xs {
+    .header {
+        padding: 0;
+        & .header.sticky {
+            padding: 0;
+        }
+    }
+    .banner {
+        & h1 {
+            font-size: 2.5rem;
+        }
+        & p {
+            font-size: 1.6rem;
+            padding: 20px 0;
+        }
+    }
+}
+
 
 /* BANNER */
 
@@ -270,7 +284,7 @@
             }
         }
         &-subtitle {
-            font-size: 1.4rem;
+            font-size: 2rem;
             color: $color-texto-link;
             padding: 25px;
             -webkit-animation: text-focus 1.2s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;

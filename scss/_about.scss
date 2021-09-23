@@ -34,9 +34,7 @@
                     margin-top: 20px;
                 }
                 & .cambridge {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
+                    @include flex(row, space-between, center);
                     & img {
                         width: 50%;
                     }
@@ -67,6 +65,11 @@
 }
 
 @include phone-xs {
+    .titulo {
+        & h2 {
+            font-size: 2rem;
+        }
+    }
     .contenedor__about {
         & .main__about {
             & .about__datos {
@@ -74,6 +77,9 @@
                 & .about__datos-col1 {
                     width: 100%;
                     margin-bottom: 20px;
+                    & h2 {
+                        font-size: 1.7rem;
+                    }
                 }
                 & .about__datos-col2 {
                     width: 100%;
@@ -88,6 +94,11 @@
                         & img {
                             width: 100%;
                         }
+                    }
+                }
+                & .about__datos-historia {
+                    & h2 {
+                        font-size: 1.7rem;
                     }
                 }
             }

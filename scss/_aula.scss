@@ -7,6 +7,18 @@ input {
     background: -webkit-repeating-linear-gradient(45deg, #71b7e6, #69a6ce, #b98acc, #b98acc, #69a6ce, #9b59b6);
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    &-track {
+        background: $color-primario;
+        border-radius: 50px;
+    }
+    &-thumb {
+        background: $color-texto-link;
+        border-radius: 50px;
+    }
+}
+
 #menu-toggle {
     display: none;
     &:checked~.sidebar .brand h2 {
@@ -44,7 +56,7 @@ input {
     -webkit-backdrop-filter: blur( 4px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
-    width: 280px;
+    width: 250px;
     overflow-y: auto;
     transition: width 300ms;
     & .brand {
@@ -86,14 +98,14 @@ input {
             transition: .3s;
             padding: 5px 0;
             &:hover {
-                background-color: #ee8176;
+                background-color: #9b59b6;
                 border-radius: 4px;
             }
             &:hover:last-child {
                 background: transparent;
             }
             &.active {
-                background: #ee8176;
+                background: #9b59b6;
                 border-radius: 4px;
                 padding: 7px 0;
             }
@@ -119,10 +131,6 @@ input {
     min-height: 100vh;
     padding: .5rem;
     transition: margin-left 300ms;
-    // background: #380152;
-    // background: -moz-linear-gradient(360deg, #380152 0%, #9903e3 100%);
-    // background: -webkit-linear-gradient(360deg, #380152 0%, #9903e3 100%);
-    // background: linear-gradient(360deg, #380152 0%, #9903e3 100%);
     & header {
         height: 70px;
         @include flex(row, space-between, center);
@@ -174,6 +182,7 @@ input {
             font-size: 1.5rem;
             margin-left: 1rem;
             color: $color-texto-link;
+            cursor: pointer;
         }
     }
     & main {
@@ -324,11 +333,10 @@ input {
             border: 1px solid rgba( 255, 255, 255, 0.18);
             margin-bottom: 20px;
             & h3 {
-                color: #9903e3;
+                color: $color-secundario;
                 font-size: 1.5rem;
                 font-weight: 400;
-                // text-shadow: 1px 1px 1px #000;
-                padding-top: 15px;
+                padding: 15px 10px 0;
             }
             & .contenido {
                 display: flex;
@@ -437,7 +445,7 @@ input {
             text-shadow: 2px 2px 2px #1c1c1c;
         }
         & .container {
-            @include flex(row, center, center);
+            @include flex(row, center, stretch);
             height: 100%;
             & .card {
                 background: rgba( 255, 255, 255, 0.25);
@@ -453,12 +461,12 @@ input {
                 width: 350px;
                 color: $color-texto-link;
                 padding: 15px;
+                position: relative;
                 & .icon {
                     font-size: 3rem;
                     text-shadow: 2px 2px 2px #1c1c1c;
                 }
                 & .content {
-                    // padding: 2rem;
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -471,6 +479,7 @@ input {
                     }
                     & p {
                         font-size: 1.1rem;
+                        margin-bottom: 30px;
                     }
                     & .arrow {
                         font-size: 3rem;
@@ -479,6 +488,10 @@ input {
                         padding: 10px;
                         text-shadow: 2px 2px 2px #1c1c1c;
                         cursor: pointer;
+                        position: absolute;
+                        bottom: -10px;
+                        margin-top: 20px;
+                        right: 0;
                         &:hover {
                             transform: scale(1.1);
                             transition: all .2s;
@@ -516,7 +529,6 @@ input {
                     font-size: 2rem;
                     width: 50%;
                     text-align: left;
-                    margin-left: 10px;
                 }
                 & img {
                     width: 25%;
@@ -629,8 +641,8 @@ input {
                                 font-weight: 700;
                                 margin-bottom: 10px;
                                 cursor: pointer;
-                                color: #ee8176;
-                                text-shadow: 1px 1px 1px #1c1c1c;
+                                color: #000;
+                                text-shadow: 1px 1px 1px #c1c1c1;
                             }
                             & p {
                                 color: $color-texto-link;
@@ -766,17 +778,28 @@ input {
 }
 
 @media only screen and (max-width: 630px) {
-    .main-content header {
-        & .search {
-            display: none;
+    .main-content {
+        & header {
+            // width: 84%;
+            & .search {
+                display: none;
+            }
         }
     }
     #central {
         & .material {
+            & h2 {
+                font-size: 2rem;
+            }
             & .container {
                 & .jumbo {
                     flex-direction: column;
                     height: 100%;
+                    & h2 {
+                        font-size: 1.5rem;
+                        text-align: left;
+                        width: 100%;
+                    }
                 }
                 & .resources {
                     & .recursos {
@@ -784,7 +807,139 @@ input {
                         & .pdf {
                             margin-bottom: 20px;
                         }
+                        & .player {
+                            width: 90%;
+                        }
                     }
+                }
+            }
+        }
+    }
+}
+
+@include phone-xs {
+    .total {
+        & .main-content {
+            left: 65px;
+            & header {
+                right: initial;
+                width: 70%;
+            }
+            & main {
+                & .cards {
+                    & .card-title {
+                        & h1 {
+                            font-size: 1.5rem;
+                            width: 100%;
+                        }
+                    }
+                    & .card-info {
+                        flex-direction: column;
+                        & .imagen-card {
+                            margin-left: 30%;
+                            & img {
+                                width: 50%;
+                            }
+                        }
+                        & .text-card {
+                            & h2 {
+                                font-size: 1.2rem;
+                            }
+                            & p {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                    & .card-video {
+                        & p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                & .chart-grid {
+                    & .next-class,
+                    .next-exam {
+                        & .fecha,
+                        .exam {
+                            & span {
+                                font-size: 3rem;
+                            }
+                            & h3 {
+                                font-size: 1.2rem;
+                            }
+                            & p {
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                    & .chart-sales {
+                        & .donut-example {
+                            & svg {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            & .program {
+                & .programa {
+                    & h2 {
+                        font-size: 1.3rem;
+                    }
+                    & .lecciones {
+                        & h3 {
+                            font-size: 1.2rem;
+                            word-break: break-all;
+                        }
+                        & .contenido {
+                            flex-direction: column;
+                        }
+                    }
+                }
+                & .profe {
+                    & .content__box {
+                        width: 100%;
+                        & .box__imgBox {
+                            width: 60px;
+                            height: 60px;
+                        }
+                        & .box__parrafo {
+                            & h3 {
+                                font-size: 1.2rem;
+                            }
+                            & p {
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                    & .calendar {
+                        & .horarios,
+                        .info-couch {
+                            & h3 {
+                                font-size: 1.1rem;
+                            }
+                            & p {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #central {
+            & .carreras {
+                & h2 {
+                    font-size: 2rem;
+                }
+                & .container {
+                    & .card {
+                        margin: 10px 0;
+                    }
+                }
+            }
+            & .material {
+                & h2 {
+                    font-size: 1.7rem;
                 }
             }
         }

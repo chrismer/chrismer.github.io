@@ -82,3 +82,11 @@
         }
     }
 }
+
+@include phone-xs {
+    .main__login {
+        & .login__container {
+            width: 90%;
+        }
+    }
+}
