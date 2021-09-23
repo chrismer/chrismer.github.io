@@ -2187,10 +2187,6 @@ input {
   .about .about__containerIcons .containerIcons__iconosData {
     margin-bottom: 40px;
   }
-
-  .show {
-    opacity: 1;
-  }
 }
 /* SECCION CURSOS */
 .cursos {

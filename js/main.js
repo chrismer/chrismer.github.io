@@ -82,14 +82,13 @@ function mostrarlo() {
     });
 };
 
-// contadorPhone = document.querySelector('#about');
 
-// let tablet = screen.width < 768;
 window.onload = load;
 
 function load() {
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
         const speed = 2000;
+
         document.querySelectorAll('#counter').forEach(counter => {
 
             const counterNumber = +counter.getAttribute('countTo');
