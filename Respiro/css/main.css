@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --color-primario: #333;
+    --color-secundario: #FF665A;
+    --color-blanco: #fff;
+    --color-jess-1: #E8C4AC;
+    --color-jess-2: #E6D4C1;
+    --color-jess-3: #C1DBC8;
+    --color-jess-4: #A8B8AA;
+    --color-jess-5: #E8E7EC;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* HEADER */
+
+.header {
+    margin-top: 15px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    text-decoration: none;
+    font-size: 30px;
+    color: var(--color-primario);
+}
+
+.header .nav {
+    display: flex;
+}
+
+.header .nav li {
+    margin-right: 15px;
+}
+
+.header .nav li a {
+    color: var(--color-primario);
+    font-size: 1.1rem;
+    font-weight: 300;
+    transition: .3s;
+}
+
+.header .nav li a:hover {
+    color: var(--color-secundario);
+}
+
+.header .login {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--color-primario);
+}
+
+.header .login:hover {
+    color: var(--color-secundario);
+}
+
+.header .menuToggle {
+    display: none;
+}
+
+.header .iconos ion-icon {
+    font-size: 2rem;
+}
+
+@media (max-width: 991px) {
+    .header {
+        z-index: 1000;
+    }
+    .header .iconos {
+        display: flex;
+        align-items: center;
+    }
+    .header .menuToggle {
+        display: block;
+    }
+    .header ion-icon,
+    .menuToggle {
+        font-size: 2rem;
+    }
+    .header .btns {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .header .btns.active ion-icon:nth-child(2) {
+        display: block;
+    }
+    .header .btns.active ion-icon:nth-child(1) {
+        display: none;
+    }
+    .header .btns ion-icon {
+        font-size: 1.5em;
+        color: var(--color-primario);
+    }
+    .header .btns ion-icon:nth-child(2) {
+        display: none;
+    }
+    .header .nav {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background: var(--color-blanco);
+        z-index: 4;
+        transition: 0.5s;
+    }
+    .header .nav li {
+        margin-bottom: 10px;
+    }
+    .header .nav li a {
+        font-size: 1.5rem;
+    }
+    .nav.active {
+        left: 0;
+    }
+}
+
+
+/* HERO */
+
+.hero {
+    display: flex;
+    margin: 20px auto;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 12vw;
+    color: var(--color-primario);
+}
