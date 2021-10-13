@@ -26,12 +26,18 @@
                 }
             }
             & .about__datos-historia {
-                margin: 0 80px;
                 & h2 {
-                    text-align: center;
-                    font-size: 2.2rem;
+                    font-size: 2rem;
                     font-weight: 400;
-                    margin: 20px 0;
+                    color: $color-primario;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                & .cambridge {
+                    @include flex(row, space-between, center);
+                    & img {
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -59,6 +65,11 @@
 }
 
 @include phone-xs {
+    .titulo {
+        & h2 {
+            font-size: 2rem;
+        }
+    }
     .contenedor__about {
         & .main__about {
             & .about__datos {
@@ -66,12 +77,29 @@
                 & .about__datos-col1 {
                     width: 100%;
                     margin-bottom: 20px;
+                    & h2 {
+                        font-size: 1.7rem;
+                    }
                 }
                 & .about__datos-col2 {
                     width: 100%;
                 }
                 & .about__datos-historia {
                     margin: 0;
+                    & .cambridge {
+                        flex-direction: column;
+                        & p {
+                            padding: 10px 0;
+                        }
+                        & img {
+                            width: 100%;
+                        }
+                    }
+                }
+                & .about__datos-historia {
+                    & h2 {
+                        font-size: 1.7rem;
+                    }
                 }
             }
         }

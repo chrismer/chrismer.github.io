@@ -1,96 +1,115 @@
 @use 'components' as *;
-.curso__detalles {
-    @include flex(row, space-between, align);
-    max-width: 1200px;
-    flex-wrap: wrap;
+.main__cursos {
     margin: 0 auto;
-    // width: 100%;
-    & .curso__adultos,
-    .curso__adol,
-    .curso__niños {
-        width: 350px;
-        & img {
-            width: 100%;
-        }
-        & h3 {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin: 10px 0;
-        }
-        & .accordion__contentBx--adul {
-            margin-top: 68px;
-        }
-        & .accordion__contentBx--niños {
-            margin-top: 30px;
-        }
-        & .curso__accordion {
-            width: 100%;
-            & .accordion__contentBx {
-                position: relative;
+    & .curso__detalles {
+        @include flex(row, space-between, align);
+        max-width: 1200px;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        & .curso__adultos,
+        .curso__adol,
+        .curso__niños {
+            width: 350px;
+            & img {
+                width: 100%;
+            }
+            & h3 {
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: 400;
                 margin: 10px 0;
-                & .accordion__label {
+            }
+            & .accordion__contentBx--adul {
+                margin-top: 68px;
+            }
+            & .accordion__contentBx--niños {
+                margin-top: 30px;
+            }
+            & .curso__accordion {
+                width: 100%;
+                & .accordion__contentBx {
                     position: relative;
-                    padding: 10px;
-                    background: $color-primario;
-                    color: $color-texto-link;
-                    cursor: pointer;
-                    &::before {
-                        content: '+';
-                        position: absolute;
-                        top: 50%;
-                        right: 20px;
-                        transform: translateY(-50%);
-                        font-size: 1.5em;
+                    margin: 10px 0;
+                    & .accordion__label {
+                        position: relative;
+                        padding: 10px;
+                        background: $color-primario;
+                        color: $color-texto-link;
+                        cursor: pointer;
+                        &::before {
+                            content: '+';
+                            position: absolute;
+                            top: 50%;
+                            right: 20px;
+                            transform: translateY(-50%);
+                            font-size: 1.5em;
+                        }
                     }
-                }
-                &.active .accordion__label::before {
-                    content: '-';
-                }
-                & .accordion__content {
-                    position: relative;
-                    background: $color-texto-link;
-                    height: 0;
-                    overflow: hidden;
-                    transition: .7s;
-                    overflow-y: auto;
-                }
-                &.active .accordion__content {
-                    height: 150px;
-                    padding: 10px;
+                    &.active .accordion__label::before {
+                        content: '-';
+                    }
+                    & .accordion__content {
+                        position: relative;
+                        background: $color-texto-link;
+                        height: 0;
+                        overflow: hidden;
+                        transition: .7s;
+                        overflow-y: auto;
+                    }
+                    &.active .accordion__content {
+                        height: 150px;
+                        padding: 10px;
+                    }
                 }
             }
         }
     }
-}
-
-.curso__inter {
-    @include flex(row, space-between, center);
-    max-width: 1200px;
-    margin: 40px auto;
-    background: #ed1e79;
-    background: -moz-linear-gradient(to bottom, #ed1e79 0%, #662d8c 100%);
-    background: -webkit-linear-gradient(to bottom, #ed1e79 0%, #662d8c 100%);
-    background: linear-gradient(to bottom, #ed1e79 0%, #662d8c 100%);
-    border-radius: 30px;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    & h2 {
-        margin-left: 30px;
-        text-align: left;
-        font-size: 3rem;
-        color: $color-texto-link;
-        text-shadow: 1px 1px 2px#111;
+    .cambridge {
+        @include flex(row, space-between, center);
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 20px auto;
+        & img {
+            width: 40%;
+        }
+        & p {
+            font-size: 1.2rem;
+            width: 60%;
+        }
+        & .red-Cambridge {
+            margin: 0 auto;
+        }
     }
-    & p {
-        font-size: 1.2rem;
-        text-align: center;
-        color: #fed6e3;
-        width: 80%;
-        padding-top: 20px;
-    }
-    & img {
-        width: 100%;
+    .curso__inter {
+        @include flex(row, space-between, center);
+        max-width: 1200px;
+        margin: 40px auto;
+        background: #2cebc7;
+        background: -moz-linear-gradient(315deg, #2cebc7 0%, #8267d5 100%);
+        background: -webkit-linear-gradient(315deg, #2cebc7 0%, #8267d5 100%);
+        background: linear-gradient(315deg, #2cebc7 0%, #8267d5 100%);
+        transform-origin: top left;
+        border-radius: 30px;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+        & h2 {
+            margin-left: 10px;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 3rem;
+            color: $color-texto-link;
+            text-shadow: 1px 1px 2px#111;
+        }
+        & p {
+            font-size: 1.2rem;
+            text-align: left;
+            padding: 10px;
+            color: $color-texto-link;
+            width: 80%;
+        }
+        & img {
+            width: 100%;
+        }
     }
 }
 
@@ -104,7 +123,7 @@
         }
     }
     .curso__inter {
-        margin: 10px 5px;
+        width: 95%;
     }
 }
 
@@ -116,10 +135,21 @@
             margin: 10px 10px;
         }
     }
+    .main__cursos .cambridge {
+        flex-direction: column;
+        width: 100%;
+        & img {
+            width: 80%;
+        }
+        & p {
+            width: 90%;
+            margin: 10px auto;
+        }
+    }
     .curso__inter {
-        margin: 0 10px;
         & h2 {
             text-align: center;
+            margin: 20px 0 0;
         }
         & p {
             width: 100%;
@@ -129,26 +159,46 @@
 }
 
 @include phone-xs {
-    .curso__detalles {
-        & .curso__adultos,
-        .curso__adol,
-        .curso__niños {
-            width: 100%;
-            margin: 10px 10px;
+    .titutlo {
+        & .titulo__cursos {
+            font-size: 2rem;
         }
     }
-    .curso__inter {
-        @include flex(column, justify, align);
-        margin: 0 10px;
-        & p {
-            width: 100%;
-            padding: 20px 5px;
+    .main__cursos {
+        & h2 {
+            font-size: 1.5rem;
         }
-        & .inter__colum-2 {
-            @include flex(row, center, center);
+        & .curso__detalles {
+            & .curso__adultos,
+            .curso__adol,
+            .curso__niños {
+                width: 100%;
+                margin: 10px 10px;
+            }
+        }
+        & .cambridge {
             & img {
-                width: 50%;
-                margin: 0 0 10px;
+                width: 100%;
+            }
+        }
+        & .curso__inter {
+            @include flex(column, justify, align);
+            & .inter__colum-1 {
+                & h2 {
+                    font-size: 1.8rem;
+                    text-align: center;
+                }
+                & p {
+                    width: 100%;
+                    padding: 20px 5px;
+                }
+            }
+            & .inter__colum-2 {
+                @include flex(row, center, center);
+                & img {
+                    width: 50%;
+                    margin: 0 0 10px;
+                }
             }
         }
     }

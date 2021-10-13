@@ -11,23 +11,35 @@
     <meta name="googlebot" content="INDEX, FOLLOW, ALL">
     <!-- OPEN GRAPH -->
     <meta property="og:title" content="Nuestra Galeria">
-    <meta property="og:image" content="./img/CEI.png">
+    <meta property="og:image" content="./img/CEI4.png">
     <meta property="og:description" content="Te compartimos nuestras fotos y videos del instituto">
     <meta property="og:url" content="http://ceiinstituto.com">
     <meta name="theme-color" content="#9903e3">
     <title>Galeria | CEI</title>
-    <link rel="shortcut icon" href="../img/CEI.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="../img/CEI.png">
+    <link rel="shortcut icon" href="../img/CEI4.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/CEI4.png">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/lightbox.min.css">
     <script src="https://use.fontawesome.com/df6fd7dc2b.js"></script>
     <script src="../js/lightbox-plus-jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72538066-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-72538066-2');
+    </script>
+
 </head>
 
 <body>
     <header class="header">
-        <a href="../index.html" class="header__logo"><img src="../img/CEI.png" alt=""></a>
-        <!-- <div class="menuToggle" onclick="toggleMenu()"></div> -->
+        <a href="../index.html" class="header__logo"><img src="../img/CEI4.png" alt="Logo"></a>
         <div class="menu-btn">
             <span class="menu-btn__burger"></span>
         </div>
@@ -35,7 +47,7 @@
             <ul class="menu-nav">
                 <li class="menu-nav__item active"><a class="menu-nav__link" href="../index.html">Inicio</a></li>
                 <li class="menu-nav__item">
-                    <a class="menu-nav__link" href="../pages/about.html">Acerda de</a>
+                    <a class="menu-nav__link" href="../pages/about.html">Acerca de</a>
                 </li>
                 <li class="menu-nav__item">
                     <a class="menu-nav__link" href="../pages/cursos.html">Cursos</a>
@@ -59,23 +71,54 @@
             <hr>
             <div class="galery__container">
                 <div class="galery__imagenes show">
-                    <a href="../img/foto1.jpg" data-lightbox="mygallery"><img src="../img/foto1.jpg" alt="" class="fitBg"></a>
-                    <a href="../img/foto2.jpg" data-lightbox="mygallery"><img src="../img/foto2.jpg" alt="" class="fitBg"></a>
-                    <a href="../img/foto3.jpg" data-lightbox="mygallery"><img src="../img/foto3.jpg" alt="" class="fitBg"></a>
-                    <a href="../img/foto4.jpg" data-lightbox="mygallery"><img src="../img/foto4.jpg" alt="" class="fitBg"></a>
+                    <a href="../img/foto1.jpg" data-lightbox="mygallery"><img src="../img/foto1.jpg" alt="Fotos varias CEI" class="fitBg"></a>
+                    <a href="../img/foto2.jpg" data-lightbox="mygallery"><img src="../img/foto2.jpg" alt="Fotos varias CEI" class="fitBg"></a>
+                    <a href="../img/foto3.jpg" data-lightbox="mygallery"><img src="../img/foto3.jpg" alt="Fotos varias CEI" class="fitBg"></a>
+                    <a href="../img/foto4.jpg" data-lightbox="mygallery"><img src="../img/foto4.jpg" alt="Fotos varias CEI" class="fitBg"></a>
                 </div>
                 <div class="galery__imagenes show">
-                    <a href="../img/foto5.jpg" data-lightbox="mygallery"><img src="../img/foto5.jpg" alt="" class="fitBg"></a>
-                    <a href="../img/foto6.jpg" data-lightbox="mygallery"><img src="../img/foto6.jpg" alt="" class="fitBg"></a>
-                    <a href="../img/foto7.jpg" data-lightbox="mygallery"><img src="../img/foto7.jpg" alt="" class="fitBg"></a>
-                    <a href="../img/foto8.jpg" data-lightbox="mygallery"><img src="../img/foto8.jpg" alt="" class="fitBg"></a>
+                    <a href="../img/foto5.jpg" data-lightbox="mygallery"><img src="../img/foto5.jpg" alt="Fotos varias CEI" class="fitBg"></a>
+                    <a href="../img/foto6.jpg" data-lightbox="mygallery"><img src="../img/foto6.jpg" alt="Fotos varias CEI" class="fitBg"></a>
+                    <a href="../img/foto7.jpg" data-lightbox="mygallery"><img src="../img/foto7.jpg" alt="Fotos varias CEI" class="fitBg"></a>
+                    <a href="../img/foto8.jpg" data-lightbox="mygallery"><img src="../img/foto8.jpg" alt="Fotos varias CEI" class="fitBg"></a>
                 </div>
                 <h2 class="titulo-en-expansion">Videos</h2>
                 <hr>
                 <div class="galery__videos show">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/juKd26qkNAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FKFACRfa9hY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8mD6uV1rnsE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="row">
+                        <div class="youtube_video">
+                            <iframe width="100%" height="100%" id="video_id" src="https://www.youtube.com/embed/PDllC05gXAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="details">
+                            <h2>Te compartimos algunos de nuestros videos del instituto CEI</h2>
+                        </div>
+                    </div>
+                    <div class="gallery">
+                        <div class="item">
+                            <img src="../img/video1.png" alt="Foto video 1" data-id="PDllC05gXAA">
+                            <div class="youtube_icon">
+                                <img src="../img/youtube.svg" alt="Logo Youtube">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="../img/video2.png" alt="Foto video 2" data-id="vZERTbMJN8w">
+                            <div class="youtube_icon">
+                                <img src="../img/youtube.svg" alt="Logo Youtube">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="../img/video3.png" alt="Foto video 3" data-id="J8pL90oKhpw">
+                            <div class="youtube_icon">
+                                <img src="../img/youtube.svg" alt="Logo Youtube">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="../img/video4.png" alt="Foto video 4" data-id="xqyv3iArx8Q">
+                            <div class="youtube_icon">
+                                <img src="../img/youtube.svg" alt="Logo Youtube">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -84,13 +127,13 @@
     <footer class="footer ">
         <div class="footer__container ">
             <div class="container__logo ">
-                <a href="../index.html"><img src="../img/CEI.png" alt=""></a>
+                <a href="../index.html"><img src="../img/CEI4.png" alt="Logo"></a>
             </div>
             <div class="container__navegacion ">
                 <ul class="footer__navegacion ">
                     <li><a href="../index.html ">Inicio</a></li>
                     <li>
-                        <a href="../pages/about.html ">Acerda de</a></li>
+                        <a href="../pages/about.html ">Acerca de</a></li>
                     <li>
                         <a href="../pages/cursos.html ">Cursos</a></li>
                     <li>
@@ -101,12 +144,19 @@
                         <a href="../pages/login.html ">Aula Virtual</a></li>
                 </ul>
             </div>
-            <div class="container__socialRed ">
-                <div><a href="https://www.facebook.com/ " target="_blank "><i class="fa fa-facebook-square fa-2x "></i></a></div>
-                <div><a href="https://www.instagram.com/ " target="_blank "><i class="fa fa-instagram fa-2x "></i></a></div>
+            <div class="container__socialRed">
+                <ul>
+                    <li><a href="https://www.facebook.com/Institute-CEI-209551809114189" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/ceiinstituto/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                </ul>
             </div>
+
         </div>
-        <p>&copy; 2021</p>
+        <hr class="linea-footer">
+        <div class="chrismer">
+            <img src="../img/Chrismer.White.png" alt="Logo Diseño Web">
+            <p>&copy; 2021</p>
+        </div>
     </footer>
 
 
@@ -116,6 +166,22 @@
             'albumLabel': "Imagen %1 of %2",
             'wrapAround': true,
             'positionFromTop': 200
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".item").click(function() {
+                let youtube_id = $(this).children("img").attr("data-id");
+                $(this).children(".youtube_icon")
+                    .addClass("active").parent()
+                    .siblings()
+                    .children(".youtube_icon")
+                    .removeClass("active")
+
+                let newUrl = `https://www.youtube.com/embed/${youtube_id}`;
+                $("#video_id").attr("src", newUrl);
+
+            })
         })
     </script>
 </body>

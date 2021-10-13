@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto CEI | Aula Virtual</title>
+    <link rel="shortcut icon" href="../img/CEI4.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="../img/CEI4.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://use.fontawesome.com/df6fd7dc2b.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72538066-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-72538066-2');
+    </script>
+
+</head>
+
+<body>
+    <div class="total">
+        <input type="checkbox" id="menu-toggle">
+        <div class="sidebar">
+            <div class="brand">
+                <span><i class="fa fa-globe"></i></span>
+                <h2>Instituto CEI</h2>
+            </div>
+            <div class="sidemenu">
+                <div class="side-user">
+                    <div class="side-img"><img src="../img/test2.jpg" alt="Foto Alumno"></div>
+                    <div class="user">
+                        <small>Alumno Coder</small>
+                        <p>Nivel Superior</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            <span><i class="fa fa-star"></i></span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li id="btn1">
+                        <a href="">
+                            <span><i class="fa fa-graduation-cap"></i></span>
+                            <span>Cursos y Carreras</span>
+                        </a>
+                    </li>
+                    <li id="btn2">
+                        <a href="">
+                            <span><i class="fa fa-cubes"></i></span>
+                            <span>Material</span>
+                        </a>
+                    </li>
+                    <li id="btn3">
+                        <a href="">
+                            <span><i class="fa fa-newspaper-o"></i></span>
+                            <span>Novedades y Eventos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://slack.com/intl/es-ar/">
+                            <span><i class="fa fa-commenting-o"></i></span>
+                            <span>Foro</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html" target="_blank"><img src="../img/CEI4.png" alt="Logo"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content">
+            <header>
+                <label for="menu-toggle" class="menu-toggler">
+                    <span><i class="fa fa-bars"></i></span>
+                </label>
+                <div class="search">
+                    <span><i class="fa fa-search"></i></span>
+                    <input type="search" placeholder="Buscar contenido">
+                </div>
+                <div class="head-icons">
+                    <span><i class="fa fa-bell-o"></i></span>
+                    <span><i class="fa fa-book"></i></span>
+                    <a href="../pages/login.html" class="logout" title="Cerrar sesión"><span><i  class="fa fa-power-off"></i></span></a>
+                </div>
+            </header>
+            <div id="central">
+                <main>
+                    <div class="cards">
+                        <div class="card-title">
+                            <h1>Bienvenidos al Aula Virtual CEI</h1>
+                        </div>
+                        <div class="card-info">
+                            <div class="imagen-card">
+                                <img src="../img/online-class.png" alt="Foto Nivel Superior">
+                            </div>
+                            <div class="text-card">
+                                <h2>Nivel Superior</h2>
+                                <p>El curso de adultos brinda la posibilidad de alcanzar un nivel intermedio (B1) en la lengua inglesa. El alumno que alcance este nivel será capaz de comprender los puntos principales de textos claros y en lengua estándar
+                                    si tratan sobre cuestiones que le son conocidas, ya sea en situaciones de trabajo, de estudio o de ocio.</p>
+                            </div>
+                        </div>
+                        <div class="card-video">
+                            <div class="video">
+                                <iframe width="100%" height="250" src="https://www.youtube.com/embed/PDllC05gXAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <p>Última Clase</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="chart-grid">
+                        <div class="next-class">
+                            <div class="fecha">
+                                <span><i class="fa fa-file-text-o"></i></span>
+                                <h3>Próxima Clase</h3>
+                                <p>20-09-2021</p>
+                            </div>
+                        </div>
+                        <div class="next-exam">
+                            <div class="exam">
+                                <span><i class="fa fa-calendar"></i></span>
+                                <h3>Próximo Éxamen</h3>
+                                <p>22-09-2021</p>
+                            </div>
+                        </div>
+                        <div class="chart-sales">
+                            <div id="donut-example" style="height: 250px;"></div>
+                        </div>
+                    </section>
+                </main>
+                <section class="program">
+                    <div class="programa">
+                        <h2>Programa</h2>
+                        <div class="lecciones">
+                            <h3>Lección 1 - Comienzos - Sentimientos</h3>
+                            <div class="contenido">
+                                <p>Estilos directo e indirecto – Presente perfecto y pasado simple con frases temporales – Peticiones amables </p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 2 - Temas controvertidos y contemporáneos</h3>
+                            <div class="contenido">
+                                <p>Diferencias entre el Presente perfecto y el presente perfecto continuo – Voz pasiva - Opiniones</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 3 - Malos Hábitos, vacaciones, juegos televisivos</h3>
+                            <div class="contenido">
+                                <p>Used to / would / be get used to / be used to, formas futuras, sustantivos contables y no contables, preguntas espejo </p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 4 - Historias de Vida - Libros</h3>
+                            <div class="contenido">
+                                <p>Tiempos narrativos pasados – Deseos y arrepentimientos - Adverbios</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 5 - Inventos – Publicidad</h3>
+                            <div class="contenido">
+                                <p>Oraciones condicionales (o / 1 / 2) - AS LONG AS / UNLESS / PROVIDING THAT - Artículos – Sustantivos compuestos</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 6 - Edad – Generaciones</h3>
+                            <div class="contenido">
+                                <p>Verbos y frases modales, futuro perfecto y perfecto continuo, colocaciones de sustantivos y adjetivos, persuasión</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 7 - Medios, TV, prensa, noticias y artículos periodísticos</h3>
+                            <div class="contenido">
+                                <p>Cuantificadores – Énfasis </p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 8 - Comportamiento, sentimientos, decisiones</h3>
+                            <div class="contenido">
+                                <p>Oraciones condicionales (2 / 3 / mixtas) – gerundio / presente participio Vs. Infinitivo – Adjetivos de modo</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 9 - Problemas, incidentes, delitos</h3>
+                            <div class="contenido">
+                                <p>Gerundio / presente participio Vv. Infinitivo – Verbos modales de deducción en pasado</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="lecciones">
+                            <h3>Lección 10 - Cultura, críticas de películas</h3>
+                            <div class="contenido">
+                                <p>Cláusulas relativas – Cláusulas participias</p>
+                                <span><i class="fa fa-play-circle-o"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profe">
+                        <div class="content__box">
+                            <div class="box__imgBox">
+                                <img src="../img/test3.jpg" alt="Foto Profesora">
+                            </div>
+                            <div class="box__parrafo">
+                                <h3 class="primario">Cintia</h3>
+                                <p>Profesora</p>
+                            </div>
+                        </div>
+                        <div class="calendar">
+                            <div class="horarios">
+                                <h3>Horario de Cursada</h3>
+                                <p>Lunes a Jueves:</p>
+                                <p>18:30hs - 20:30hs</p>
+                            </div>
+                            <div class="info-couch">
+                                <h3>Télefono y Correo</h3>
+                                <p>(0223)555-5555</p>
+                                <p>cintia@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+        <label class="close-mobile-menu" for="menu-toggle"></label>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+    <script>
+        Morris.Donut({
+            element: 'donut-example',
+            data: [{
+                label: "Speaking",
+                value: 20
+            }, {
+                label: "Writing",
+                value: 30
+            }, {
+                label: "Listening",
+                value: 50
+            }],
+            colors: ['#bc78ec', '#ee8176', '#69a6ce'],
+            labelColor: '#fff'
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#btn1').on('click', function() {
+                $("#central").load('../pages/carreras.html');
+                return false;
+            });
+
+            $('#btn2').on('click', function() {
+                // $('.navbar-nav li').removeClass('active');
+                $("#central").load('../pages/material.html');
+                return false;
+            });
+
+            $('#btn3').on('click', function() {
+                // $('.navbar-nav li').removeClass('active');
+                $("#central").load('../pages/news.html');
+                return false;
+            });
+
+            $('#btn4').on('click', function() {
+                // $('.navbar-nav li').removeClass('active');
+                $("#central").load('inc/contact.php');
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

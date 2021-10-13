@@ -5,6 +5,7 @@ $color-gris: #666;
 $tablet: 992px;
 $phone:768px;
 $phone-xs: 550px;
+$phone-xxs: 325px;
 @mixin flex-between {
     display: flex;
     justify-content: space-between;
@@ -39,6 +40,13 @@ $phone-xs: 550px;
 // responsive 550px
 @mixin phone-xs {
     @media (max-width: $phone-xs) {
+        @content;
+    }
+}
+
+// responsive 325px
+@mixin phone-xxs {
+    @media (max-width: $phone-xxs) {
         @content;
     }
 }

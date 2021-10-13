@@ -16,16 +16,28 @@
     <meta property="og:url" content="http://ceiinstituto.com">
     <meta name="theme-color" content="#9903e3">
     <title>Login | CEI</title>
-    <link rel="shortcut icon" href="../img/CEI.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/CEI4.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="../img/CEI.png">
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://use.fontawesome.com/df6fd7dc2b.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72538066-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-72538066-2');
+    </script>
+
 </head>
 
 <body>
     <header class="header">
-        <a href="../index.html" class="header__logo"><img src="../img/CEI.png" alt=""></a>
-        <!-- <div class="menuToggle" onclick="toggleMenu()"></div> -->
+        <a href="../index.html" class="header__logo"><img src="../img/CEI4.png" alt=""></a>
         <div class="menu-btn">
             <span class="menu-btn__burger"></span>
         </div>
@@ -33,7 +45,7 @@
             <ul class="menu-nav">
                 <li class="menu-nav__item active"><a class="menu-nav__link" href="../index.html">Inicio</a></li>
                 <li class="menu-nav__item">
-                    <a class="menu-nav__link" href="../pages/about.html">Acerda de</a>
+                    <a class="menu-nav__link" href="../pages/about.html">Acerca de</a>
                 </li>
                 <li class="menu-nav__item">
                     <a class="menu-nav__link" href="../pages/cursos.html">Cursos</a>
@@ -51,32 +63,32 @@
         <div class="login__container">
             <h2 class="titulo-en-expansion">Loguearse</h2>
 
-            <form class="show" action="#">
+            <form action="https://chrismer.github.io/pages/aula.html">
                 <div class="texto-campos">
-                    <input type="text" required>
+                    <input type="text">
                     <label>Usuario</label>
                     <span></span>
                 </div>
                 <div class="texto-campos">
-                    <input type="password" required>
+                    <input type="password">
                     <label>Contraseña</label>
                     <span></span>
                 </div>
                 <div class="olvidar">¿Olvidó su contraseña?</div>
-                <input class="button" type="submit" value="Entrar">
+                <button class="button" id="login">Entrar</button>
             </form>
         </div>
     </main>
     <footer class="footer ">
         <div class="footer__container ">
             <div class="container__logo ">
-                <a href="../index.html"><img src="../img/CEI.png" alt=""></a>
+                <a href="../index.html"><img src="../img/CEI4.png" alt=""></a>
             </div>
             <div class="container__navegacion ">
                 <ul class="footer__navegacion ">
                     <li><a href="../index.html ">Inicio</a></li>
                     <li>
-                        <a href="../pages/about.html ">Acerda de</a></li>
+                        <a href="../pages/about.html ">Acerca de</a></li>
                     <li>
                         <a href="../pages/cursos.html ">Cursos</a></li>
                     <li>
@@ -87,16 +99,73 @@
                         <a href="../pages/login.html ">Aula Virtual</a></li>
                 </ul>
             </div>
-            <div class="container__socialRed ">
-                <div><a href="https://www.facebook.com/ " target="_blank "><i class="fa fa-facebook-square fa-2x "></i></a></div>
-                <div><a href="https://www.instagram.com/ " target="_blank "><i class="fa fa-instagram fa-2x "></i></a></div>
+            <div class="container__socialRed">
+                <ul>
+                    <li><a href="https://www.facebook.com/Institute-CEI-209551809114189" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/ceiinstituto/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                </ul>
             </div>
+
         </div>
-        <p>&copy; 2021</p>
+        <hr class="linea-footer">
+        <div class="chrismer">
+            <img src="../img/Chrismer.White.png" alt="">
+            <p>&copy; 2021</p>
+        </div>
     </footer>
 
 
     <script src="../js/main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.onload = () => {
+            this.sessionStorage.setItem("username", "coder");
+            this.sessionStorage.setItem("password", "coder21");
+        }
+        let input = document.getElementsByTagName('input');
+        let login = document.getElementById('login');
+        let form = document.querySelector('form');
+        form.onsubmit = () => {
+            return false
+        }
+
+        login.onclick = () => {
+            if ((input[0].value != "") && (input[1].value != "")) {
+                if ((input[0].value == sessionStorage.getItem("username")) && (input[1].value == sessionStorage.getItem("password"))) {
+                    form.onsubmit = () => {
+                        return 1
+                    }
+                    document.cookie = "username" + input[0].value;
+                    document.cookie = "password" + input[1].value;
+                } else {
+                    if ((input[0].value != sessionStorage.getItem("username"))) {
+                        input[0].nextElementSibling.textContent = "Verificar Usuario";
+                        setTimeout(() => {
+                            input[0].nextElementSibling.textContent = "";
+                        }, 4000);
+                    }
+                    if ((input[1].value != sessionStorage.getItem("password"))) {
+                        input[1].nextElementSibling.textContent = "Verificar Contraseña";
+                        setTimeout(() => {
+                            input[1].nextElementSibling.textContent = "";
+                        }, 4000);
+                    }
+                }
+            } else {
+                if (input[0].value == "") {
+                    input[0].nextElementSibling.textContent = "Usuario vacio";
+                    setTimeout(() => {
+                        input[0].nextElementSibling.textContent = "";
+                    }, 4000);
+                }
+                if (input[1].value == "") {
+                    input[1].nextElementSibling.textContent = "Contraseña vacia";
+                    setTimeout(() => {
+                        input[1].nextElementSibling.textContent = "";
+                    }, 4000);
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
