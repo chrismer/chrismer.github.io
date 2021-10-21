@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 06 - JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://use.fontawesome.com/df6fd7dc2b.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Respiro</h1>
+                <p>Fragancias</p>
+            </div>
+            <form action="">
+                <input type="text" class="barra-busqueda" id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <div class="categorias" id="categorias">
+                <a href="#" class="activo">Todos</a>
+                <a href="#">Velas Perfumadas</a>
+                <a href="#">Aromatizantes</a>
+                <a href="#">Difusores de aromas</a>
+                <a href="#">Repuestos</a>
+            </div>
+        </header>
+
+        <section class="grid" id="grid">
+            <div class="item" data-categoria="velas perfumadas" data-etiquetas="velas perfumadas" data-descripcion="1.- Velas">
+                <div class="item-contenido">
+                    <img src="img/velas.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="aromatizantes" data-etiquetas="aromatizantes" data-descripcion="2.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/aromatizantes.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="difusores de aromas" data-etiquetas="difusores difusor" data-descripcion="3.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/difusores.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="repuestos" data-etiquetas="repuestos varillas botellas" data-descripcion="4.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/repuestos.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="difusores de aromas" data-etiquetas="difusores difusor" data-descripcion="5.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/difusor.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="velas perfumadas" data-etiquetas="velas perfumadas" data-descripcion="6.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/vela2.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="velas perfumadas" data-etiquetas="velas perfumadas" data-descripcion="7.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/vela3.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="aromatizantes" data-etiquetas="aromatizantes" data-descripcion="8.- Lorem ipsum dolor sit amet consectetur.">
+                <div class="item-contenido">
+                    <img src="img/aromatizante.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="item" data-categoria="aromatizantes" data-etiquetas="aromatizantes" data-descripcion="9.- Lorem ipsum dolor sit amet consectetur.
+				 	">
+                <div class="item-contenido">
+                    <img src="img/aromatizante3.jpeg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="overlay" id="overlay">
+            <div class="contenedor-img">
+                <button id="btn-cerrar-popup"><i class="fas fa-times"></i></button>
+                <img src="" alt="">
+            </div>
+            <p class="descripcion"></p>
+        </section>
+    </div>
+
+
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>
