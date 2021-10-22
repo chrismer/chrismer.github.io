@@ -88,49 +88,66 @@ const button = document.getElementById('btn').addEventListener('click', function
         }
 
     }
-    let ingresos = parseInt(prompt('Elegir producto a ingresar' + '\n' + '1: Velas' + '\n' + '2: Aromatizador' + '\n' + '3: Perfumes'));
-    let totales = parseInt(prompt('Ingrese cuantos productos van a ingresar'));
-    if (ingresos == 1) {
-        ingresos = 'Velas';
-    } else if (ingresos == 2) {
-        ingresos = 'Aromatizador';
-    } else {
-        ingresos = 'Perfumes';
-    }
-    let guardando;
-    let algo;
-    let nombreVela;
-    let fragancias;
-    let canti;
-    let precios;
-    let tamaños;
-    let accion = [];
-    let arrayProductos = [];
-    let salida;
-    for (i = 1; i <= totales; i++) {
 
-        nombreVela = prompt('Indique el nombre del producto');
-        fragancias = prompt('Indique la fragancia');
-        canti = parseInt(prompt('Ingrese las cantidades'));
-        precios = parseInt(prompt('Ingrese el valor'));
-        tamaños = parseInt(prompt('Ingrese la medida correspondiente' + '\n' + '1: Grande' + '\n' + '2: Mediano' + '\n' + '3: Chico'));
-        if (tamaños == 1) {
-            tamaños = 'Grande';
-        } else if (tamaños == 2) {
-            tamaños = 'Mediano';
+    let ingresos;
+    let totales;
+
+    function pedirDatos() {
+
+        ingresos = parseInt(prompt('Elegir producto a ingresar' + '\n' + '1: Velas' + '\n' + '2: Aromatizador' + '\n' + '3: Perfumes'));
+        totales = parseInt(prompt('Ingrese cuantos productos van a ingresar'));
+        if (ingresos == 1) {
+            ingresos = 'Velas';
+        } else if (ingresos == 2) {
+            ingresos = 'Aromatizador';
         } else {
-            tamaños = 'Chico';
+            ingresos = 'Perfumes';
         }
-        guardando = new Vela(nombreVela, fragancias, canti, precios, tamaños);
-        arrayProductos.push(guardando)
-        accion.push(guardando.valor);
 
     }
-    // let salida;
+    pedirDatos();
+
+    let arrayProductos = [];
+    let accion = [];
+
+    function mostrandoDatos() {
+
+        let guardando;
+        let algo;
+        let nombreVela;
+        let fragancias;
+        let canti;
+        let precios;
+        let tamaños;
+        let salida;
+        for (i = 1; i <= totales; i++) {
+
+            nombreVela = prompt('Indique el nombre del producto');
+            fragancias = prompt('Indique la fragancia');
+            canti = parseInt(prompt('Ingrese las cantidades'));
+            precios = parseInt(prompt('Ingrese el valor'));
+            tamaños = parseInt(prompt('Ingrese la medida correspondiente' + '\n' + '1: Grande' + '\n' + '2: Mediano' + '\n' + '3: Chico'));
+            if (tamaños == 1) {
+                tamaños = 'Grande';
+            } else if (tamaños == 2) {
+                tamaños = 'Mediano';
+            } else {
+                tamaños = 'Chico';
+            }
+            guardando = new Vela(nombreVela, fragancias, canti, precios, tamaños);
+            arrayProductos.push(guardando)
+            accion.push(guardando.valor);
+
+        }
+    }
+    mostrandoDatos();
+    let salida = '\n';
     arrayProductos.forEach(el => {
-        salida = console.log(`Los productos ingresados fueron un ${el.nombre} ${el.tamanio} con fragancia ${el.fragancia} la cantidad de ${el.cantidad} a $${el.valor}`);
+        salida += 'Los productos ingresados fueron un ' + el.nombre + ' ' + el.tamanio + ' con fragancia ' + el.fragancia + ' la cantidad de ' + el.cantidad + ' a $' + el.valor + '\n';
+        //salida = console.log(`Los productos ingresados fueron un ${el.nombre} ${el.tamanio} con fragancia ${el.fragancia} la cantidad de ${el.cantidad} a $${el.valor}`);
     });
 
+    alert(salida);
     //console.log('los productos ingresados fueron', ingresos, ' y las cantidades de ', totales, '\n', arrayProductos);
 
     //DESAFIO 06
@@ -206,6 +223,10 @@ const button = document.getElementById('btn').addEventListener('click', function
 
     let formato = JSON.stringify(baratos);
     console.log(formato);
+
+    const ordenado = velasAromaticas.sort(el => el.nombre);
+    let orden = JSON.stringify(ordenado);
+    console.log(orden);
 
     let identificador = '';
     categorias.forEach(el => {
