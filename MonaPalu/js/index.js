@@ -17,11 +17,11 @@ nextSlide = () => slide_index = slide_index + 1 === slides.length ? 0 : slide_in
 
 prevSlide = () => slide_index = slide_index - 1 < 0 ? slides.length - 1 : slide_index - 1
 
-// pause slide when hover slider
+// pausar slide en hover
 
 document.querySelector('.slider').addEventListener('mouseover', () => slide_play = false)
 
-// enable slide when mouse leave out slider
+// habilitarlo despues de hover
 document.querySelector('.slider').addEventListener('mouseleave', () => slide_play = true)
 
 // slider controll
@@ -44,63 +44,63 @@ showSlide()
 //     showSlide()
 // }, 3000);
 
-// render products
+// renderizando productos
 
-let products = [{
-        name: 'Barbijos',
+let productos = [{
+        nombre: 'Barbijos',
         image1: './images/barbijos.jpg',
         image2: './images/barbijos2.jpg',
-        old_price: '400',
-        curr_price: '300'
+        old_precio: '400',
+        new_precio: '300'
     },
     {
-        name: 'Cofia + Barbijo',
+        nombre: 'Cofia + Barbijo',
         image1: './images/cofia.jpg',
         image2: './images/cofia2.jpg',
-        old_price: '800',
-        curr_price: '600'
+        old_precio: '800',
+        new_precio: '600'
     },
     {
-        name: 'Mantas',
+        nombre: 'Mantas',
         image1: './images/MANTA.jpg',
         image2: './images/mantas.jpg',
-        old_price: '1600',
-        curr_price: '1500'
+        old_precio: '1600',
+        new_precio: '1500'
     },
     {
-        name: 'Nido Contenedor',
+        nombre: 'Nido Contenedor',
         image1: './images/nido.jpg',
         image2: './images/nido2.jpg',
-        old_price: '400',
-        curr_price: '300'
+        old_precio: '400',
+        new_precio: '300'
     },
     {
-        name: 'Porta Macetas',
+        nombre: 'Porta Macetas',
         image1: './images/porta-maceta.jpg',
         image2: './images/porta-maceta-2.jpg',
-        old_price: '800',
-        curr_price: '600'
+        old_precio: '800',
+        new_precio: '600'
     },
     {
-        name: 'Porta Mate',
+        nombre: 'Porta Mate',
         image1: './images/porta-mate.jpg',
         image2: './images/porta-mate-2.jpg',
-        old_price: '400',
-        curr_price: '300'
+        old_precio: '400',
+        new_precio: '300'
     },
     {
-        name: 'Turbantes de Toalla',
+        nombre: 'Turbantes de Toalla',
         image1: './images/turbante.jpg',
         image2: './images/turbante2.jpg',
-        old_price: '600',
-        curr_price: '500'
+        old_precio: '600',
+        new_precio: '500'
     },
 ]
 
 let product_list = document.querySelector('#latest-products')
 let best_product_list = document.querySelector('#best-products')
 
-products.forEach(e => {
+productos.forEach(e => {
     let prod = `
         <div class="col-3 col-md-6 col-sm-12">
             <div class="product-card">
@@ -118,12 +118,12 @@ products.forEach(e => {
                             <i class='bx bxs-heart'></i>
                         </button>
                     </div>
-                    <div class="product-card-name">
-                        ${e.name}
+                    <div class="product-card-nombre">
+                        ${e.nombre}
                     </div>
-                    <div class="product-card-price">
-                        <span><del>$${e.old_price}</del></span>
-                        <span class="curr-price">$${e.curr_price}</span>
+                    <div class="product-card-precio">
+                        <span><del>$${e.old_precio}</del></span>
+                        <span class="new-precio">$${e.new_precio}</span>
                     </div>
                 </div>
             </div>
