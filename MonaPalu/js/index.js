@@ -121,9 +121,9 @@ productos.forEach(e => {
                     <div class="product-card-nombre">
                         ${e.nombre}
                     </div>
-                    <div class="product-card-precio">
+                    <div class="product-card-price">
                         <span><del>$${e.old_precio}</del></span>
-                        <span class="new-precio">$${e.new_precio}</span>
+                        <span class="curr-price">$${e.new_precio}</span>
                     </div>
                 </div>
             </div>
