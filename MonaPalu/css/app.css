@@ -149,7 +149,8 @@ ul.devided>li:last-child {
 
 .logo {
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 300;
+    color: #333;
 }
 
 .mb-logo {
@@ -210,6 +211,7 @@ ul.devided>li:last-child {
     font-weight: 600;
     height: 100%;
     text-transform: uppercase;
+    color: #333;
 }
 
 .main-menu>li {
@@ -246,6 +248,7 @@ ul.devided>li:last-child {
 .mega-content h3 {
     margin: 20px 0;
     padding-left: 20px;
+    color: #333;
 }
 
 .mega-content ul {
@@ -260,6 +263,7 @@ ul.devided>li:last-child {
     transition: padding-left 0.2s ease-in-out;
     margin: 0 20px;
     text-transform: capitalize;
+    color: #333;
 }
 
 .mega-content ul>li>a:hover {
@@ -498,6 +502,7 @@ ul.devided>li:last-child {
 
 .section-header h2 {
     font-size: 40px;
+    color: #333;
 }
 
 .product-card {
@@ -591,6 +596,7 @@ ul.devided>li:last-child {
     font-size: 55px;
     font-weight: 600;
     margin-bottom: 30px;
+    color: #333;
 }
 
 .sp-item-description {
