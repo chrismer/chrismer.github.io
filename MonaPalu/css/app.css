@@ -802,6 +802,17 @@ footer ul li {
     color: #ffc107;
 }
 
+.selected {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.selected select {
+    margin-left: 10px;
+    padding: 5px;
+}
+
 .pagination {
     display: flex;
     align-items: center;
