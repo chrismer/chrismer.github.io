@@ -57,7 +57,6 @@ renderProducts = (products) => {
                 <div class="product-card">
                     <div class="product-card-img">
                         <img src="${e.image1}" alt="">
-                        <img src="${e.image2}" alt="">
                     </div>
                     <div class="product-card-info">
                         <div class="product-btn">
@@ -94,59 +93,99 @@ document.querySelector('#filter-toggle').addEventListener('click', () => filter_
 document.querySelector('#filter-close').addEventListener('click', () => filter_col.classList.toggle('active'))
 
 // filter categorias
-let categorias = document.querySelector('.filter-list').addEventListener('click', (e) => {
+//parte3
+const categoriasEvent = (e) => {
     e.preventDefault();
     objetivo = e.target.text;
-    //console.log(objetivo);
     product_list.innerHTML = '';
-    products.forEach(event => {
-        //console.log(event.categoria);
-        let dataCategoria = event.categoria;
-        //console.log(dataCategoria);
-        if (dataCategoria == objetivo) {
-            //console.log('son iguales');
 
-            product_list.innerHTML += `
-            <div class="col-4 col-md-6 col-sm-12" data-categoria="${event.categoria}">
-                <div class="product-card">
-                    <div class="product-card-img">
-                        <img src="${event.image1}" alt="">
+    let empty = products.find(el => el.categoria == objetivo)
+    if (!empty) {
+        renderProducts(products)
+        console.log('hola');
+    }
+
+
+    if (objetivo == "Todos") {
+        renderProducts(products)
+
+    } else {
+        let seleccion = products.filter(el => el.categoria == objetivo)
+            //console.log(seleccion)
+        renderProducts(seleccion)
+    }
+}
+document.querySelector('.filter-list').addEventListener('click', categoriasEvent)
+
+//let categorias = document.querySelector('.filter-list').addEventListener('click', (e) => {
+
+/* funciona joya
+e.preventDefault();
+objetivo = e.target.text;
+product_list.innerHTML = '';
+if (objetivo == "Todos") {
+    renderProducts(products)
+    renderProducts(products)
+} else {
+    let seleccion = products.filter(el => el.categoria == objetivo)
+    console.log(seleccion)
+    renderProducts(seleccion)
+}*/
+
+
+
+/*e.preventDefault();
+objetivo = e.target.text;
+//console.log(objetivo);
+product_list.innerHTML = '';
+products.forEach(event => {
+    //console.log(event.categoria);
+
+    let dataCategoria = event.categoria;
+    //console.log(dataCategoria);
+    if (dataCategoria == objetivo) {
+        //console.log('son iguales');
+
+        product_list.innerHTML += `
+        <div class="col-4 col-md-6 col-sm-12" data-categoria="${event.categoria}">
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="${event.image1}" alt="">
+                </div>
+                <div class="product-card-info">
+                    <div class="product-btn">
+                        <a href="./product-detail.html" class="btn-flat btn-hover btn-shop-now">Comprar</a>
+                        <button class="btn-flat btn-hover btn-cart-add">
+                            <i class='bx bxs-cart-add'></i>
+                        </button>
+                        <button class="btn-flat btn-hover btn-cart-add">
+                            <i class='bx bxs-heart'></i>
+                        </button>
                     </div>
-                    <div class="product-card-info">
-                        <div class="product-btn">
-                            <a href="./product-detail.html" class="btn-flat btn-hover btn-shop-now">Comprar</a>
-                            <button class="btn-flat btn-hover btn-cart-add">
-                                <i class='bx bxs-cart-add'></i>
-                            </button>
-                            <button class="btn-flat btn-hover btn-cart-add">
-                                <i class='bx bxs-heart'></i>
-                            </button>
-                        </div>
-                        <div class="product-card-name">
-                            ${event.nombre}
-                        </div>
-                        <div class="product-card-price">
-                            <span><del>${event.old_precio}</del></span>
-                            <span class="curr-price">${event.new_precio}</span>
-                        </div>
+                    <div class="product-card-name">
+                        ${event.nombre}
+                    </div>
+                    <div class="product-card-price">
+                        <span><del>${event.old_precio}</del></span>
+                        <span class="curr-price">${event.new_precio}</span>
                     </div>
                 </div>
             </div>
-        `
-        } else if (objetivo == 'Todos') {
-            console.log('soy todo');
-            product_list.innerHTML(renderProducts(products), renderProducts(products));
-        }
+        </div>
+    `
+    } else if (objetivo == 'Todos') {
+        //console.log('soy todo');
+        products.list = renderProducts(products)
+            // product_list.innerHTML(renderProducts(products), renderProducts(products));
+    } else if (objetivo !== dataCategoria.includes(objetivo)) {
+        console.log('no estoy');
+    }
 
-        // let productoFilter = document.querySelectorAll('[data-categoria]');
-
-        // productoFilter.forEach(el => {
-        //     if (event.categoria == objetivo) {
-
-        //     } else {
-        //         //el.filter(`[data-categoria]=${event.categoria}`)
-        //     }
-        // })
-
-    })
 })
+for (const obj of products) {
+    if (objetivo !== obj.categoria) {
+        console.log('soy distinto');
+    }
+    //console.log(obj.categoria);
+}*/
+// })
