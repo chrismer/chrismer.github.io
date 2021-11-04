@@ -3,42 +3,48 @@ let products = [{
         image1: './images/barbijos.jpg',
         image2: './images/barbijos2.jpg',
         old_precio: '400',
-        new_precio: '300'
+        new_precio: '300',
+        categoria: 'Accesorios'
     },
     {
         nombre: 'Cofia + Barbijo',
         image1: './images/cofia.jpg',
         image2: './images/cofia2.jpg',
         old_precio: '800',
-        new_precio: '600'
+        new_precio: '600',
+        categoria: 'Accesorios'
     },
     {
         nombre: 'Mantas',
         image1: './images/MANTA.jpg',
         image2: './images/mantas.jpg',
         old_precio: '1600',
-        new_precio: '1500'
+        new_precio: '1500',
+        categoria: 'Dormitorio'
     },
     {
         nombre: 'Nido Contenedor',
         image1: './images/nido.jpg',
         image2: './images/nido2.jpg',
         old_precio: '400',
-        new_precio: '300'
+        new_precio: '300',
+        categoria: 'Dormitorio'
     },
     {
         nombre: 'Porta Macetas',
         image1: './images/porta-maceta.jpg',
         image2: './images/porta-maceta-2.jpg',
         old_precio: '800',
-        new_precio: '600'
+        new_precio: '600',
+        categoria: 'Living'
     },
     {
         nombre: 'Porta Mate',
         image1: './images/porta-mate.jpg',
         image2: './images/porta-mate-2.jpg',
         old_precio: '400',
-        new_precio: '300'
+        new_precio: '300',
+        categoria: 'Cocina'
     },
 ]
 
@@ -47,7 +53,7 @@ let product_list = document.querySelector('#products')
 renderProducts = (products) => {
     products.forEach(e => {
         let prod = `
-            <div class="col-4 col-md-6 col-sm-12">
+            <div class="col-4 col-md-6 col-sm-12" data-categoria="${e.categoria}">
                 <div class="product-card">
                     <div class="product-card-img">
                         <img src="${e.image1}" alt="">
@@ -78,11 +84,40 @@ renderProducts = (products) => {
     })
 }
 
-renderProducts(products)
-renderProducts(products)
+renderProducts(products);
+renderProducts(products);
 
 let filter_col = document.querySelector('#filter-col')
 
 document.querySelector('#filter-toggle').addEventListener('click', () => filter_col.classList.toggle('active'))
 
 document.querySelector('#filter-close').addEventListener('click', () => filter_col.classList.toggle('active'))
+
+// filter categorias
+let categorias = document.querySelector('.filter-list').addEventListener('click', (e) => {
+    e.preventDefault();
+    objetivo = e.target.text;
+    console.log(objetivo);
+    products.forEach(event => {
+        //console.log(event.categoria);
+        let dataCategoria = event.categoria;
+        console.log(dataCategoria);
+        if (dataCategoria.includes(objetivo)) {
+
+            product_list.innerHTML = products.filter(prod => prod.categoria == objetivo);
+
+
+        }
+
+        // let productoFilter = document.querySelectorAll('[data-categoria]');
+
+        // productoFilter.forEach(el => {
+        //     if (event.categoria == objetivo) {
+
+        //     } else {
+        //         //el.filter(`[data-categoria]=${event.categoria}`)
+        //     }
+        // })
+
+    })
+})

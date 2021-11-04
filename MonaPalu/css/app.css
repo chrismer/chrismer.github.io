@@ -585,6 +585,13 @@ ul.devided>li:last-child {
     margin-left: 5px;
 }
 
+
+/*  FILTER  */
+
+.filter {
+    display: none;
+}
+
 .btn-shop-now,
 .btn-cart-add {
     font-size: 15px;
@@ -731,6 +738,11 @@ footer ul li {
 }
 
 .filter-list>li {
+    margin-bottom: 20px;
+}
+
+.filter-list>a {
+    display: block;
     margin-bottom: 20px;
 }
 

@@ -38,11 +38,11 @@ document.querySelector('.slide-prev').addEventListener('click', () => {
 
 showSlide()
 
-// setInterval(() => {
-//     if (!slide_play) return
-//     nextSlide()
-//     showSlide()
-// }, 3000);
+setInterval(() => {
+    if (!slide_play) return
+    nextSlide()
+    showSlide()
+}, 7000);
 
 // renderizando productos
 
