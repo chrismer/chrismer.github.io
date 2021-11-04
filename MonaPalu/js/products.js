@@ -98,12 +98,14 @@ let categorias = document.querySelector('.filter-list').addEventListener('click'
     e.preventDefault();
     objetivo = e.target.text;
     //console.log(objetivo);
+    product_list.innerHTML = '';
     products.forEach(event => {
         //console.log(event.categoria);
         let dataCategoria = event.categoria;
         //console.log(dataCategoria);
         if (dataCategoria == objetivo) {
             console.log('son iguales');
+
             product_list.innerHTML += `
             <div class="col-4 col-md-6 col-sm-12" data-categoria="${event.categoria}">
                 <div class="product-card">
