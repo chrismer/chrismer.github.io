@@ -532,12 +532,15 @@ ul.devided>li:last-child {
 }
 
 .product-card:hover .product-card-img img:nth-child(1) {
-    display: none;
+    /* display: none;*/
+    transform: scale(1.2);
+    transition: .5s;
 }
 
-.product-card:hover .product-card-img img:nth-child(2) {
+
+/* .product-card:hover .product-card-img img:nth-child(2) {
     display: block;
-}
+} */
 
 .product-card-info {
     padding: 20px;
