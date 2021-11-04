@@ -104,7 +104,7 @@ let categorias = document.querySelector('.filter-list').addEventListener('click'
         let dataCategoria = event.categoria;
         //console.log(dataCategoria);
         if (dataCategoria == objetivo) {
-            console.log('son iguales');
+            //console.log('son iguales');
 
             product_list.innerHTML += `
             <div class="col-4 col-md-6 col-sm-12" data-categoria="${event.categoria}">
@@ -133,6 +133,9 @@ let categorias = document.querySelector('.filter-list').addEventListener('click'
                 </div>
             </div>
         `
+        } else if (objetivo == 'Todos') {
+            console.log('soy todo');
+            product_list.innerHTML(renderProducts(products), renderProducts(products));
         }
 
         // let productoFilter = document.querySelectorAll('[data-categoria]');
