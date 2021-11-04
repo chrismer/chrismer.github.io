@@ -97,16 +97,40 @@ document.querySelector('#filter-close').addEventListener('click', () => filter_c
 let categorias = document.querySelector('.filter-list').addEventListener('click', (e) => {
     e.preventDefault();
     objetivo = e.target.text;
-    console.log(objetivo);
+    //console.log(objetivo);
     products.forEach(event => {
         //console.log(event.categoria);
         let dataCategoria = event.categoria;
-        console.log(dataCategoria);
-        if (dataCategoria.includes(objetivo)) {
-
-            product_list.innerHTML = products.filter(prod => prod.categoria == objetivo);
-
-
+        //console.log(dataCategoria);
+        if (dataCategoria == objetivo) {
+            console.log('son iguales');
+            product_list.innerHTML += `
+            <div class="col-4 col-md-6 col-sm-12" data-categoria="${event.categoria}">
+                <div class="product-card">
+                    <div class="product-card-img">
+                        <img src="${event.image1}" alt="">
+                    </div>
+                    <div class="product-card-info">
+                        <div class="product-btn">
+                            <a href="./product-detail.html" class="btn-flat btn-hover btn-shop-now">Comprar</a>
+                            <button class="btn-flat btn-hover btn-cart-add">
+                                <i class='bx bxs-cart-add'></i>
+                            </button>
+                            <button class="btn-flat btn-hover btn-cart-add">
+                                <i class='bx bxs-heart'></i>
+                            </button>
+                        </div>
+                        <div class="product-card-name">
+                            ${event.nombre}
+                        </div>
+                        <div class="product-card-price">
+                            <span><del>${event.old_precio}</del></span>
+                            <span class="curr-price">${event.new_precio}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
         }
 
         // let productoFilter = document.querySelectorAll('[data-categoria]');
