@@ -102,7 +102,7 @@ const categoriasEvent = (e) => {
     let empty = products.find(el => el.categoria == objetivo)
     if (!empty) {
         renderProducts(products)
-        console.log('hola');
+            //console.log('hola');
     }
 
 
@@ -116,6 +116,77 @@ const categoriasEvent = (e) => {
     }
 }
 document.querySelector('.filter-list').addEventListener('click', categoriasEvent)
+
+
+// INPUT SEARCH
+
+const formulario = document.querySelector('#busquedaProducto');
+const filtrar = () => {
+    product_list.innerHTML = '';
+    const texto = formulario.value.toLowerCase();
+    let select = products.filter(el => el.nombre.toLowerCase().includes(texto))
+    if (select) {
+        renderProducts(select)
+    }
+    // let nombre = '';
+    // for (let producto of products) {
+    //     nombre = producto.nombre.toLowerCase();
+    //     // renderProducts(select);
+    //     if (nombre.indexOf(texto) !== -1) {
+    //         console.log('hola');
+    //     }
+    // }
+}
+
+formulario.addEventListener('keyup', filtrar)
+    // filtrar();
+
+/*
+document.getElementById('busquedaProducto').addEventListener("keyup", function() {
+
+    product_list.innerHTML = '';
+
+    let select = products.filter(el => el.nombre.includes(this.value.toLowerCase()))
+
+    if (select) {
+        product_list = renderProducts(select);
+    } else if (product_list == undefined) {
+
+        renderProducts(products)
+
+    }
+
+    // let vacio = products.find(ele => ele.nombre == this.value.toUpperCase)
+    // if (!vacio) {
+    // }
+});*/
+
+
+
+// let buscar = document.addEventListener('keyup', (e) => {
+//     if (e.target.matches('.card-filter')) {
+//         let select = products.filter(el => el.nombre == e.target.value)
+//         renderProducts(select)
+
+//     }
+// })
+
+// function searchFilters(input, selector) {
+/*document.addEventListener("keyup", (e) => {
+    if (e.target.matches('.card-filter')) {
+        document.querySelectorAll('.product-card-name').forEach(el =>
+            el.textContent.toLowerCase().includes(e.target.value) ? console.log('exito') : console.error('mal')
+
+        );
+    }
+})*/
+
+// }
+// searchFilters(".card-filter", ".product-card-name");
+
+
+
+
 
 //let categorias = document.querySelector('.filter-list').addEventListener('click', (e) => {
 
