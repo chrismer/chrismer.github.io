@@ -6,7 +6,8 @@ let products = [{
         old_precio: '400',
         new_precio: '300',
         categoria: 'Accesorios',
-        descripcion: 'Esto es un barbijo'
+        descripcion: 'Esto es un barbijo',
+        stock: 10
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ let products = [{
         old_precio: '800',
         new_precio: '600',
         categoria: 'Accesorios',
-        descripcion: 'Esto es una cofia y un barbijo'
+        descripcion: 'Esto es una cofia y un barbijo',
+        stock: 9
     },
     {
         id: 3,
@@ -26,7 +28,8 @@ let products = [{
         old_precio: '1600',
         new_precio: '1500',
         categoria: 'Dormitorio',
-        descripcion: 'Esto es una manta'
+        descripcion: 'Esto es una manta',
+        stock: 8
     },
     {
         id: 4,
@@ -36,7 +39,8 @@ let products = [{
         old_precio: '400',
         new_precio: '300',
         categoria: 'Dormitorio',
-        descripcion: 'Esto es un nido'
+        descripcion: 'Esto es un nido',
+        stock: 7
     },
     {
         id: 5,
@@ -46,7 +50,8 @@ let products = [{
         old_precio: '800',
         new_precio: '600',
         categoria: 'Living',
-        descripcion: 'Esto es un porta maceta'
+        descripcion: 'Esto es un porta maceta',
+        stock: 6
     },
     {
         id: 6,
@@ -56,7 +61,8 @@ let products = [{
         old_precio: '400',
         new_precio: '300',
         categoria: 'Cocina',
-        descripcion: 'Esto es un porta mate'
+        descripcion: 'Esto es un porta mate',
+        stock: 5
     },
 ]
 
@@ -85,8 +91,8 @@ renderProducts = (products) => {
                             ${e.nombre}
                         </div>
                         <div class="product-card-price">
-                            <span><del>${e.old_precio}</del></span>
-                            <span class="curr-price">${e.new_precio}</span>
+                            <span><del>$${e.old_precio}</del></span>
+                            <span class="curr-price">$${e.new_precio}</span>
                         </div>
                     </div>
                 </div>
@@ -107,7 +113,7 @@ renderProducts = (products) => {
             overlay.classList.add('active');
             popup.classList.add('active');
             let boton = e.getAttribute('id');
-            console.log('el id es', boton);
+            //console.log('el id es', boton);
             let seleccionId = products.filter(el => el.id == boton)
             let detalles = document.createElement('div');
 
@@ -115,9 +121,9 @@ renderProducts = (products) => {
                 seleccionId.forEach(el => {
                     popup2.innerHTML = ''
                     detalles.innerHTML = `
-        <div class="containerPopup">
-            <div class="row product-row">
-                <div class="col-5 col-md-12">
+        <div class="container">
+            <div id="productos-renders" class="row product-row">
+                <div class="col-6 col-md-12">
                     <div class="product-img" id="product-img">
                         <img src="${el.image1}" alt="">
                     </div>
@@ -135,14 +141,14 @@ renderProducts = (products) => {
                         </div>
                     </div>
                 </div>
-                <div class="col-7 col-md-12">
+                <div class="col-6 col-md-12">
                     <div class="product-info">
                         <h1>
                         ${el.nombre}
                         </h1>
                         <div class="product-info-detail">
-                            <span class="product-info-detail-title">Marca:</span>
-                            <a href="#">Marca 1</a>
+                            <span class="product-info-detail-title">Categoria:</span>
+                            <a href="#">${el.categoria}</a>
                         </div>
                         <div class="product-info-detail">
                             <span class="product-info-detail-title">Ranking:</span>
@@ -157,15 +163,17 @@ renderProducts = (products) => {
                         <p class="product-description">
                             ${el.descripcion}
                         </p>
-                        <div class="product-info-price">$${el.new_precio}</div>
+                        <div id="precio" class="product-info-price">${el.new_precio}</div>
                         <div class="product-quantity-wrapper">
-                            <span class="product-quantity-btn">
+                            <span class="product-quantity-btn disminuir">
                                 <i class='bx bx-minus'></i>
                             </span>
-                            <span class="product-quantity">1</span>
-                            <span class="product-quantity-btn">
+                            <span id="valor" class="product-quantity">1</span>
+                            <span class="product-quantity-btn aumentar">
                                 <i class='bx bx-plus'></i>
                             </span>
+                            <span id="stock" class="product-info-detail-title">${el.stock}</span>
+                            <span class="product-info-detail-title">disponibles</span>
                         </div>
                         <div>
                             <button class="btn-flat btn-hover">Agregar al carrito</button>
@@ -227,6 +235,53 @@ renderProducts = (products) => {
                 document.querySelector('#view-all-description').innerHTML = content.classList.contains('active') ? 'Ver menos' : 'Ver todo'
             })
 
+            //CONTADORES
+            let contador = 1;
+            let precioActual = document.querySelector('#precio');
+            let total = precioActual.textContent;
+            let resultado;
+            valorReal = products.find(pro => pro.new_precio)
+                //console.log(valorReal.new_precio);
+            let stock = document.getElementById('stock').textContent;
+            console.log(stock);
+            const valor = document.querySelector('#valor'),
+                botones = document.querySelectorAll('.product-quantity-btn');
+            botones.forEach(boton => {
+
+                //precioActual.innerHTML = resultado
+                let valorReal = products.find(pro => pro.new_precio.includes(precioActual.textContent))
+                    //console.log(valorReal.new_precio);
+                let stockReal = products.find(prod => prod.stock == stock);
+                console.log(stockReal.stock);
+                boton.addEventListener('click', function(e) {
+                    const estilos = e.currentTarget.classList;
+                    //console.log(estilos);
+
+                    if (estilos.contains('disminuir') && contador > 1) {
+                        contador--;
+                        resultado = resultado - valorReal.new_precio;
+                        stock++;
+                        console.log(stock);
+                    } else if (estilos.contains('aumentar') && contador < stockReal.stock) {
+                        contador++;
+                        stock--;
+                        console.log(stock);
+                        total = valorReal.new_precio * contador;
+
+                        resultado = total;
+
+
+                        //console.log(precioActual, total, resultado);
+                    } else if (valor.textContent == 1) {
+                        contador = 1;
+                        resultado = valorReal.new_precio * contador
+                            // precioActual.innerHTML = valorReal.new_precio;
+                    }
+                    valor.textContent = contador;
+                    precioActual.innerHTML = resultado;
+                    console.log(precioActual, total);
+                })
+            })
 
         })
 
@@ -240,9 +295,13 @@ renderProducts = (products) => {
     });
 }
 
+
+
+//RENDERIZADOS
 renderProducts(products);
 renderProducts(products);
 
+// columnas responsive
 let filter_col = document.querySelector('#filter-col')
 
 document.querySelector('#filter-toggle').addEventListener('click', () => filter_col.classList.toggle('active'))

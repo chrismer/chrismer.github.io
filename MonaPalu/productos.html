@@ -77,7 +77,28 @@
                     </div>
                     <ul class="user-menu">
                         <li><a href="#"><i class='bx bx-user-circle'></i></a></li>
-                        <li><a href="#"><i class='bx bx-cart'></i></a><span id="carrito"></span></li>
+                        <li class="submenu">
+                            <a href="#"><i class='bx bx-cart'></i></a>
+                            <span id="carrito-contador"></span>
+                            <div id="carrito">
+                                <p class="titulo-carrito">Carrito de Compras</p>
+                                <table class="table caption-top" id="lista-carrito">
+                                    <caption>Lista de Productos</caption>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Imagen</th>
+                                            <th scope="col">Produto</th>
+                                            <th scope="col">Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                                <a href="" id="vaciar-carrito" class="btn-flat btn-hover">Vaciar Carrito</a>
+                                <a href="" id="carrito-total" class="btn-flat btn-hover">Ver Carrito</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
