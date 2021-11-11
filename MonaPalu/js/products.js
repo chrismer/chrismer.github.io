@@ -123,7 +123,7 @@ renderProducts = (products) => {
                     popup2.innerHTML = ''
                     detalles.innerHTML = `
         <div class="container">
-            <div id="productos-renders" class="row product-row">
+            <div id="productos-renders" data-id="${el.id}" class="row product-row">
                 <div class="col-6 col-md-12">
                     <div class="product-img" id="product-img">
                         <img src="${el.image1}" alt="">
@@ -244,7 +244,7 @@ renderProducts = (products) => {
             valorReal = products.find(pro => pro.new_precio)
                 //console.log(valorReal.new_precio);
             let stock = document.getElementById('stock').textContent;
-            console.log(stock);
+            //console.log(stock);
             const valor = document.querySelector('#valor'),
                 botones = document.querySelectorAll('.product-quantity-btn');
             botones.forEach(boton => {
@@ -253,7 +253,7 @@ renderProducts = (products) => {
                 let valorReal = products.find(pro => pro.new_precio.includes(precioActual.textContent))
                     //console.log(valorReal.new_precio);
                 let stockReal = products.find(prod => prod.stock == stock);
-                console.log(stockReal.stock);
+                //console.log(stockReal.stock);
                 boton.addEventListener('click', function(e) {
                     const estilos = e.currentTarget.classList;
                     //console.log(estilos);
@@ -286,12 +286,12 @@ renderProducts = (products) => {
 
             //boton prueba
             let botonCarrito = document.getElementById('button');
-            console.log(botonCarrito);
+            //console.log(botonCarrito);
             let productosRenders = document.getElementById('products');
             if (botonCarrito in productosRenders){
-                console.log('esta aca');
+                //console.log('esta aca');
             }else{
-                console.log('no esta cargado');
+                //console.log('no esta cargado');
                 
             }
             $(".button").click(function () { 
