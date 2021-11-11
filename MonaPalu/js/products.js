@@ -122,7 +122,7 @@ renderProducts = (products) => {
                 seleccionId.forEach(el => {
                     popup2.innerHTML = ''
                     detalles.innerHTML = `
-        <div class="container">
+        <div id="container" class="container">
             <div id="productos-renders" data-id="${el.id}" class="row product-row">
                 <div class="col-6 col-md-12">
                     <div class="product-img" id="product-img">
@@ -323,6 +323,7 @@ renderProducts = (products) => {
 //RENDERIZADOS
 renderProducts(products);
 renderProducts(products);
+cargarEventListeners();
 
 // columnas responsive
 let filter_col = document.querySelector('#filter-col')
