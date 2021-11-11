@@ -19,6 +19,7 @@ function comprandoProductos(e){
     if(e.target.classList.contains('agregar-carrito')){
         const product = e.target.parentElement.parentElement.parentElement;
         leerDatosProductos(product);
+        console.log(product);
     }
 }
 
@@ -30,6 +31,7 @@ function leerDatosProductos(product){
         precio: product.getElementById('precio').textContent,
         id: product.querySelector('div').getAttribute('data-id')
     }
+    console.log(infoProducto);
     insertarCarrito(infoProducto);
 }
 
