@@ -1271,7 +1271,7 @@ footer ul li {
 .button.active::before{
     content: '';
     position: absolute;
-    background: url(/images/shopping-cart-solid.svg) no-repeat;
+    background: url(https://chrismer.github.io/MonaPalu/images/shopping-cart-solid.svg) no-repeat;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -1288,7 +1288,7 @@ footer ul li {
 .button-cart .success::before{
     content: '';
     position: absolute;
-    background: url(/images/check-solid.svg) no-repeat;
+    background: url(https://chrismer.github.io/MonaPalu//images/check-solid.svg) no-repeat;
     left: 0;
     right: 0;
     margin: 0 auto;
