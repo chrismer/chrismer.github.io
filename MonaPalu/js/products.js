@@ -299,11 +299,11 @@ renderProducts = (products) => {
                 
                 setTimeout(function(){
                     $(".button").addClass("success");
-                }, 3000);
+                }, 3500);
                 setTimeout(function(){
                     $(".button").removeClass("active");
                     $(".button").removeClass("success")
-                },5000);
+                },5500);
             });
 
         })
