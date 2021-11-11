@@ -1,6 +1,16 @@
 $(document).ready(function() {
     console.log("El DOM está listo");
 
+    if('CARRITO' in localStorage){
+        const agregadosCarrito = JSON.parse(localStorage.getItem('CARRITO'));
+
+        for(const producto of agregadosCarrito){
+            carrito.push(products.image1, products.nombre,);
+        }
+    }
+    // VARIABLES
+    const carrito = [];
+
     obtenerLocalStorage();
 
     function obtenerLocalStorage() {

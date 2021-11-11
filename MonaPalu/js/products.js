@@ -1,3 +1,4 @@
+
 let products = [{
         id: 1,
         nombre: 'Barbijos',
@@ -175,8 +176,8 @@ renderProducts = (products) => {
                             <span id="stock" class="product-info-detail-title">${el.stock}</span>
                             <span class="product-info-detail-title">disponibles</span>
                         </div>
-                        <div>
-                            <button class="btn-flat btn-hover">Agregar al carrito</button>
+                        <div class="button-cart">
+                            <button id="button" class="agregar-al-carrito button">Agregar al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -283,6 +284,28 @@ renderProducts = (products) => {
                 })
             })
 
+            //boton prueba
+            let botonCarrito = document.getElementById('button');
+            console.log(botonCarrito);
+            let productosRenders = document.getElementById('products');
+            if (botonCarrito in productosRenders){
+                console.log('esta aca');
+            }else{
+                console.log('no esta cargado');
+                
+            }
+            $(".button").click(function () { 
+                $(this).addClass("active");
+                
+                setTimeout(function(){
+                    $(".button").addClass("success");
+                }, 3000);
+                setTimeout(function(){
+                    $(".button").removeClass("active");
+                    $(".button").removeClass("success")
+                },5000);
+            });
+
         })
 
     })
@@ -348,3 +371,22 @@ const filtrar = () => {
 }
 
 formulario.addEventListener('keyup', filtrar)
+
+
+// SELECTED
+const filterSelect = ['Mas Relevantes', 'Mayor Precio', 'Menor Precio'];
+
+const filtradoSelect = document.getElementById('selecciones');
+
+for(const selected of filterSelect){
+    let option = document.createElement('option');
+
+    option.innerHTML = selected;
+
+    filtradoSelect.appendChild(option);
+
+}
+
+
+
+

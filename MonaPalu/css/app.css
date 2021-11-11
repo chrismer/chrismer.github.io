@@ -1228,6 +1228,82 @@ footer ul li {
 }
 
 
+/* ------------------------- */
+
+
+/* CARRITO BOTON DESCARGA*/
+
+
+/* ------------------------- */
+
+.button-cart .button{
+    /* background-color: var(--btn-color); */
+    display: inline-block;
+    background-color: transparent;
+    width: 220px;
+    border: 2px solid #000;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+    outline: none;
+    padding: 10px;
+    transition: all ease .5s;
+}
+
+.button-cart .button:hover{
+    border-radius: 30px;
+}
+
+.button.active{
+    font-size: 0;
+    width: 60px;
+    height: 60px;
+    /* border: 2px solid green; */
+    border-left-color: transparent;
+    animation: rotate 2s ease .5s infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(360deg);
+    }
+}
+.button.active::before{
+    content: '';
+    position: absolute;
+    background: url(/images/shopping-cart-solid.svg) no-repeat;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 41px;
+    height: 41px;
+    line-height: 41px;
+    top: 8px;
+} 
+.button-cart .success{
+    position: relative;
+    animation: bounce .5s ease-in;
+    border: 2px solid green;
+}
+.button-cart .success::before{
+    content: '';
+    position: absolute;
+    background: url(/images/check-solid.svg) no-repeat;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 41px;
+    height: 41px;
+    line-height: 41px;
+    top: 8px;
+}
+@keyframes bounce{
+    0%{
+        transform: scale(0.9);
+    }
+}
+
+
 /* responsive */
 
 @media only screen and (max-width: 1280px) {
