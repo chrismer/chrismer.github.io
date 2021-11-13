@@ -101,6 +101,9 @@ renderProducts = (products) => {
         `
             product_list.insertAdjacentHTML("beforeend", prod)
         })
+
+        
+
         // POPUP
 
     let btnAbrirPopup = document.querySelectorAll('.btn-abrir-popup'),
@@ -108,8 +111,9 @@ renderProducts = (products) => {
         popup = document.getElementById('popup'),
         popup2 = document.getElementById('popup2'),
         btnCerrarPopup = document.getElementById('btn-cerrar-popup');
-
+        
     btnAbrirPopup.forEach(e => {
+        
         e.addEventListener('click', function() {
             overlay.classList.add('active');
             popup.classList.add('active');
@@ -131,7 +135,7 @@ renderProducts = (products) => {
                     <div class="box">
                         <div class="product-img-list">
                             <div class="product-img-item">
-                                <img src="${el.image1}" alt="">
+                                <img class="image1" src="${el.image1}" alt="">
                             </div>
                             <div class="product-img-item">
                                 <img src="${el.image2}" alt="">
@@ -284,16 +288,8 @@ renderProducts = (products) => {
                 })
             })
 
-            //boton prueba
-            let botonCarrito = document.getElementById('button');
-            //console.log(botonCarrito);
-            let productosRenders = document.getElementById('products');
-            if (botonCarrito in productosRenders){
-                //console.log('esta aca');
-            }else{
-                //console.log('no esta cargado');
-                
-            }
+            
+            
             $(".button").click(function () { 
                 $(this).addClass("active");
                 
@@ -306,10 +302,14 @@ renderProducts = (products) => {
                 },5500);
             });
 
+            
+            
+            
         })
 
     })
 
+    
 
     btnCerrarPopup.addEventListener('click', function(e) {
         e.preventDefault();
@@ -323,7 +323,8 @@ renderProducts = (products) => {
 //RENDERIZADOS
 renderProducts(products);
 renderProducts(products);
-cargarEventListeners();
+
+
 
 // columnas responsive
 let filter_col = document.querySelector('#filter-col')

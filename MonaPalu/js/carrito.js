@@ -4,8 +4,18 @@ const listaCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 const verCarritoTotal = document.getElementById('carrito-total');
 
-console.log(carrito,productosGral,listaCarrito,vaciarCarritoBtn,verCarritoTotal);
-cargarEventListeners();
+btnAbrirPopup = document.querySelectorAll('.btn-abrir-popup');
+ventanaPopup= document.getElementById('popup');
+
+        if(ventanaPopup.classList.contains('active')){
+             cargarEventListeners();
+             console.log(ventanaPopup);
+        }
+
+
+
+
+// cargarEventListeners();
 
 function cargarEventListeners(){
     productosGral.addEventListener('click', comprandoProductos);
@@ -14,10 +24,24 @@ function cargarEventListeners(){
     document.addEventListener('DOMContentLoaded', leerLocalStorage);
 }
 
+ function comprandoProductos(e){
+     e.preventDefault();
+     if(productosGral.classList.contains('.btn-abrir-popup')){
+           const fuckinBoton = document.querySelector('.button');
+           fuckinBoton.addEventListener('click', e =>{
+            const product = e.target.parentElement.parentElement.parentElement;
+            leerDatosProductos(product);
+           }) 
+//         const product = e.target.parentElement.parentElement.parentElement.parentElement;
+//         leerDatosProductos(product);
+//         console.log(product);
+    }
+}
+
 function comprandoProductos(e){
     e.preventDefault();
-    if(e.target.classList.contains('agregar-carrito')){
-        const product = e.target.parentElement.parentElement.parentElement;
+    if(e.target.classList.contains('agregar-al-carrito')){
+        const product = e.target.parentElement.parentElement.parentElement.parentElement;
         leerDatosProductos(product);
         console.log(product);
     }
@@ -60,7 +84,7 @@ function eliminarCompra(e){
 
     if (e.target.classList.contains('borrar-producto')) {
         e.target.parentElement.parentElement.parentElement.remove();
-        producto= e.target.parentElement.parentElement.parentElement;
+        producto= e.target.parentElement.parentElement.parentElement.parentElement;
         productoId= producto.querySelector('div').getAttribute('data-id');
     }
     eliminarProductoLocalStorage(productoId)
@@ -132,3 +156,8 @@ function eliminarProductoLocalStorage(product){
 function vaciarLocalStorage(){
     localStorage.clear();
 }
+
+$(document).ready(function(){
+
+    console.log(product_list);
+})
