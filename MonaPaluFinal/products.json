@@ -1,0 +1,83 @@
+{
+    "status": "success",
+    "items": [{
+            "id": 1,
+            "title": "Barbijos",
+            "price": 135,
+            "image": "./img/barbijos.jpg",
+            "categoria": "living"
+        },
+        {
+            "id": 2,
+            "title": "Cofia + Barbijos",
+            "price": 950,
+            "image": "./img/cofia.jpg",
+            "categoria": "living"
+        },
+        {
+            "id": 3,
+            "title": "Alfombras",
+            "price": 750,
+            "image": "./img/alfombras.jpg",
+            "categoria": "playa"
+        },
+        {
+            "id": 4,
+            "title": "Difusores",
+            "price": 999,
+            "image": "./img/difusores.jpg",
+            "categoria": "dormitorio"
+        },
+        {
+            "id": 5,
+            "title": "Lona playera",
+            "price": 250,
+            "image": "./img/lona.jpg",
+            "categoria": "baño"
+
+        },
+        {
+            "id": 6,
+            "title": "Mantas",
+            "price": 850,
+            "image": "./img/manta.jpg",
+            "categoria": "playa"
+
+        },
+        {
+            "id": 7,
+            "title": "Nido",
+            "price": 600,
+            "image": "./img/nido.jpg",
+            "categoria": "cocina"
+        },
+        {
+            "id": 8,
+            "title": "Porta maceta",
+            "price": 350,
+            "image": "./img/porta-maceta.jpg",
+            "categoria": "baño"
+        },
+        {
+            "id": 9,
+            "title": "Porta mate",
+            "price": 799,
+            "image": "./img/porta-mate.jpg",
+            "categoria": "dormitorio"
+        },
+        {
+            "id": 10,
+            "title": "Articulos playa",
+            "price": 150,
+            "image": "./img/playa.jpg",
+            "categoria": "accesorios"
+        },
+        {
+            "id": 11,
+            "title": "Portas macetas",
+            "price": 650,
+            "image": "./img/porta-maceta-2.jpg",
+            "categoria": "accesorios"
+        }
+    ]
+}
